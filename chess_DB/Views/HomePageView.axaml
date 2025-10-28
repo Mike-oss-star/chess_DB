@@ -1,0 +1,78 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             HorizontalAlignment="Stretch"
+             VerticalAlignment="Stretch"
+             x:Class="chess_DB.Views.HomePageView">
+    <UserControl.Styles>
+        <StyleInclude Source="/Styles/AppDefaultStyle.axaml"></StyleInclude>
+    </UserControl.Styles>
+    
+    <ScrollViewer  HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled">
+        <Grid Background="{DynamicResource PrimaryBackgroundGradient}" ColumnDefinitions="* , *, *" >
+            <Grid Grid.Column="0" Width="50"></Grid>
+            <StackPanel Grid.Column="1"  Orientation="Horizontal" Spacing="50">
+                <Button Classes="home" Click="GoToPlayerPage">
+                    <StackPanel>
+                        <Label Classes="icon" Content="&#xE4D6;"></Label>
+                        <TextBlock>
+                            Players
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+            
+                <Button Classes="home">
+                    <StackPanel>
+                        <Label Classes="icon" Content="&#xE67E;"></Label>
+                        <TextBlock>
+                            Competitions
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+                
+                <Button Classes="home">
+                    <StackPanel>
+                        <Label Classes="icon" Content="&#xE34C;"></Label>
+                        <TextBlock>
+                            Subscription
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+                
+                <Button Classes="home">
+                    <StackPanel>
+                        <Label Classes="icon" Content="&#xE2A0;"></Label>
+                        <TextBlock>
+                            Games <LineBreak/>
+                            Encoding
+                        </TextBlock>    
+                    </StackPanel>
+                </Button>
+                
+                <Button Classes="home">
+                    <StackPanel>
+                        <Label Classes="icon" Content="&#xED62;"></Label>
+                        <TextBlock>
+                            ELO <LineBreak/>
+                            Ranking
+                        </TextBlock>    
+                    </StackPanel>
+                </Button>
+                
+                <Button Classes="home">
+                    <StackPanel>
+                        <Label Classes="icon" Content="&#xE3E8;"></Label>
+                        <TextBlock>
+                            Functionality<LineBreak/>
+                            (We don't Know)
+                        </TextBlock>
+                    </StackPanel>
+                </Button>
+                
+            </StackPanel>
+            <Grid Grid.Column="2" Width="50"></Grid>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

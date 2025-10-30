@@ -72,3 +72,4 @@ C:\Users\branl\RiderProjects\chess_DB\chess_DB\obj\Debug\net9.0\chess_DB.pdb
 C:\Users\branl\RiderProjects\chess_DB\chess_DB\obj\Debug\net9.0\chess_DB.genruntimeconfig.cache
 C:\Users\branl\RiderProjects\chess_DB\chess_DB\obj\Debug\net9.0\ref\chess_DB.dll
 C:\Users\branl\RiderProjects\chess_DB\chess_DB\bin\Debug\net9.0\CommunityToolkit.Mvvm.dll
+C:\Users\branl\RiderProjects\chess_DB\chess_DB\obj\Debug\net9.0\chess_DB.sourcelink.json

@@ -10,69 +10,79 @@
         <StyleInclude Source="/Styles/AppDefaultStyle.axaml"></StyleInclude>
     </UserControl.Styles>
     
-    <ScrollViewer  HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled">
-        <Grid Background="{DynamicResource PrimaryBackgroundGradient}" ColumnDefinitions="* , *, *" >
-            <Grid Grid.Column="0" Width="50"></Grid>
-            <StackPanel Grid.Column="1"  Orientation="Horizontal" Spacing="50">
-                <Button Classes="home" Click="GoToPlayerPage">
-                    <StackPanel>
-                        <Label Classes="icon" Content="&#xE4D6;"></Label>
-                        <TextBlock>
-                            Players
-                        </TextBlock>
-                    </StackPanel>
-                </Button>
-            
-                <Button Classes="home">
-                    <StackPanel>
-                        <Label Classes="icon" Content="&#xE67E;"></Label>
-                        <TextBlock>
-                            Competitions
-                        </TextBlock>
-                    </StackPanel>
-                </Button>
+    <Grid Background="{DynamicResource PrimaryBackgroundGradient}" RowDefinitions="Auto,*">
+        <Grid Height="50"></Grid>
+        <ScrollViewer Grid.Row="1"  HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled">
+            <Grid  ColumnDefinitions="* , *, *" >
+                <Grid Grid.Column="0" Width="50"></Grid>
+                <StackPanel Grid.Column="1"  Orientation="Horizontal" Spacing="50">
+                    <Button Classes="home" Click="GoToPlayerPage">
+                        <StackPanel>
+                            <Label Classes="icon" Content="&#xE4D6;"></Label>
+                            <TextBlock Classes="homeText">
+                                <LineBreak/>Players <LineBreak/>
+                            </TextBlock>
+                            <!--<TextBlock Classes="subText">
+                                Add<LineBreak/>
+                                Edit<LineBreak/>
+                                Consult<LineBreak/>
+                                Remove<LineBreak/>
+                            </TextBlock>!-->
+                        </StackPanel>
+                    </Button>
                 
-                <Button Classes="home">
-                    <StackPanel>
-                        <Label Classes="icon" Content="&#xE34C;"></Label>
-                        <TextBlock>
-                            Subscription
-                        </TextBlock>
-                    </StackPanel>
-                </Button>
-                
-                <Button Classes="home">
-                    <StackPanel>
-                        <Label Classes="icon" Content="&#xE2A0;"></Label>
-                        <TextBlock>
-                            Games <LineBreak/>
-                            Encoding
-                        </TextBlock>    
-                    </StackPanel>
-                </Button>
-                
-                <Button Classes="home">
-                    <StackPanel>
-                        <Label Classes="icon" Content="&#xED62;"></Label>
-                        <TextBlock>
-                            ELO <LineBreak/>
-                            Ranking
-                        </TextBlock>    
-                    </StackPanel>
-                </Button>
-                
-                <Button Classes="home">
-                    <StackPanel>
-                        <Label Classes="icon" Content="&#xE3E8;"></Label>
-                        <TextBlock>
-                            Functionality<LineBreak/>
-                            (We don't Know)
-                        </TextBlock>
-                    </StackPanel>
-                </Button>
-                
-            </StackPanel>
-            <Grid Grid.Column="2" Width="50"></Grid>
-        </Grid>
-    </ScrollViewer>
+                    <Button Classes="home">
+                        <StackPanel>
+                            <Label Classes="icon" Content="&#xE67E;"></Label>
+                            <TextBlock Classes="homeText">
+                                Competitions
+                            </TextBlock>
+                        </StackPanel>
+                    </Button>
+                    
+                    <Button Classes="home">
+                        <StackPanel>
+                            <Label Classes="icon" Content="&#xE34C;"></Label>
+                            <TextBlock Classes="homeText">
+                                Subscription
+                            </TextBlock>
+                        </StackPanel>
+                    </Button>
+                    
+                    <Button Classes="home">
+                        <StackPanel>
+                            <Label Classes="icon" Content="&#xE2A0;"></Label>
+                            <TextBlock Classes="homeText">
+                                Games <LineBreak/>
+                                Encoding
+                            </TextBlock>    
+                        </StackPanel>
+                    </Button>
+                    
+                    <Button Classes="home">
+                        <StackPanel>
+                            <Label Classes="icon" Content="&#xED62;"></Label>
+                            <TextBlock Classes="homeText">
+                                ELO <LineBreak/>
+                                Ranking
+                            </TextBlock>    
+                        </StackPanel>
+                    </Button>
+                    
+                    <Button Classes="home">
+                        <StackPanel>
+                            <Label Classes="icon" Content="&#xE3E8;"></Label>
+                            <TextBlock Classes="homeText">
+                                Functionality<LineBreak/>
+                                (We don't Know)
+                            </TextBlock>
+                        </StackPanel>
+                    </Button>
+                    
+                </StackPanel>
+                <Grid Grid.Column="2" Width="50"></Grid>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+        
 </UserControl>

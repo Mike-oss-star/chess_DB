@@ -10,4 +10,12 @@ public partial class PlayerPageView : UserControl
     {
         InitializeComponent();
     }
+    
+    private void GoToHomePage(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        if (VisualRoot is MainView mainView)
+        {
+            mainView.MainContent.Content = new HomePageView();
+        }
+    }
 }

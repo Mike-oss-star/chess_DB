@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace chess_DB.Views;
 
-public partial class PlayerPageView : UserControl
+public partial class AddPlayerPage : UserControl
 {
-    public PlayerPageView()
+    public AddPlayerPage()
     {
         InitializeComponent();
     }
@@ -16,14 +16,6 @@ public partial class PlayerPageView : UserControl
         if (VisualRoot is MainView mainView)
         {
             mainView.MainContent.Content = new HomePageView();
-        }
-    }
-    
-    private void GoToAddPlayerPage(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
-    {
-        if (VisualRoot is MainView mainView)
-        {
-            mainView.MainContent.Content = new AddPlayerPage();
         }
     }
 }

@@ -24,6 +24,16 @@
             <GradientStop Offset="1" Color="#9400D3"></GradientStop>
         </LinearGradientBrush>
         
+        <LinearGradientBrush x:Key="PrimaryBackgroundGradientConfirm" StartPoint="0%, 0%" EndPoint="100%, 100%" >
+            <GradientStop Offset="0" Color="Green"></GradientStop>
+            <GradientStop Offset="1" Color="DarkGreen"></GradientStop>
+        </LinearGradientBrush>
+        
+        <LinearGradientBrush x:Key="PrimaryBackgroundGradientCancel" StartPoint="0%, 0%" EndPoint="100%, 100%" >
+            <GradientStop Offset="0" Color="Red"></GradientStop>
+            <GradientStop Offset="1" Color="DarkRed"></GradientStop>
+        </LinearGradientBrush>
+        
         <SolidColorBrush x:Key="PrimaryBackground">#151E3E</SolidColorBrush>
         <SolidColorBrush x:Key="PrimaryForeground">#CFCFCF</SolidColorBrush>
         

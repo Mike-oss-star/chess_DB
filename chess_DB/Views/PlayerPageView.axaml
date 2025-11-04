@@ -21,7 +21,7 @@
                 <Grid Grid.Column="0"  Width="50">
                 </Grid>
                 <StackPanel Grid.Column="1"  Orientation="Horizontal" Spacing="50">
-                    <Button Classes="home">
+                    <Button Classes="home" Click="GoToAddPlayerPage">
                         <StackPanel>
                             <Label Classes="icon" Content="&#xE4D0;"></Label>
                             <TextBlock Classes="homeText">

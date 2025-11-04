@@ -1,0 +1,126 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="chess_DB.Views.AddPlayerPage">
+    
+    <UserControl.Styles>
+        <StyleInclude Source="/Styles/AppDefaultStyle.axaml"></StyleInclude>
+    </UserControl.Styles>
+    
+    <Grid RowDefinitions="Auto,*" Background="{DynamicResource PrimaryBackgroundGradient}">
+        <Border Grid.Row="0" Padding="1">
+            <Grid ColumnDefinitions="Auto,*">
+                <Button Grid.Column="0" Classes="transparent" Height="50" Width="50" Click="GoToHomePage">
+                    <Label Classes="icon-only" Content="&#xE2C2;"></Label>
+                </Button>
+                <TextBlock Grid.Column="1" TextAlignment="Center" Classes="title1">
+                    Add New Player
+                </TextBlock>
+            </Grid>
+        </Border>
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible">
+            <Grid RowDefinitions="*,*,*,*">
+                <Border Grid.Row="0" Classes="textZone" Background="{DynamicResource PrimaryBackgroundGradient}">
+                    <StackPanel>
+                        <TextBlock Classes="title2">
+                            General information
+                        </TextBlock>
+                        <Border Classes="detailList">
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBlock Classes="detailName"> Name </TextBlock> <TextBox Classes="detailValue"></TextBox>
+                            </StackPanel>
+                        </Border>
+                        <Border Classes="detailList">
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBlock Classes="detailName"> Surname </TextBlock> <TextBox Classes="detailValue"></TextBox>
+                            </StackPanel>
+                        </Border>
+                        <Border Classes="detailList">
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBlock Classes="detailName"> Birthday </TextBlock> <DatePicker></DatePicker>
+                            </StackPanel>
+                        </Border>
+                        
+                        <StackPanel Orientation="Horizontal" Classes="detailList" >
+                            <TextBlock Classes="detailName"> Gender</TextBlock>
+                            <ComboBox>
+                                <ComboBoxItem>Male</ComboBoxItem>
+                                <ComboBoxItem>Female</ComboBoxItem>
+                                <ComboBoxItem>Oder</ComboBoxItem>
+                            </ComboBox>
+                        </StackPanel>
+                         
+                    </StackPanel>
+                </Border>
+                
+                <Border Grid.Row="1" Classes="textZone" Background="{DynamicResource PrimaryBackgroundGradient}">
+                    <StackPanel>
+                        <TextBlock Classes="title2">
+                            Contact
+                        </TextBlock>
+                        <Border Classes="detailList">
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBlock Classes="detailName"> Email </TextBlock> <TextBox Classes="detailValue"></TextBox>
+                            </StackPanel>
+                        </Border>
+                        
+                        <StackPanel Orientation="Horizontal" Classes="detailList" >
+                            <TextBlock Classes="detailName"> Phone </TextBlock> <TextBox Classes="detailValue"></TextBox>
+                        </StackPanel>
+                        
+                    </StackPanel>
+                </Border>
+                
+                <Border Grid.Row="2" Classes="textZone" Background="{DynamicResource PrimaryBackgroundGradient}">
+                    <StackPanel>
+                        <TextBlock Classes="title2">
+                            Address
+                        </TextBlock>
+                        <Border Classes="detailList">
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBlock Classes="detailName"> Country </TextBlock> <TextBox Classes="detailValue"></TextBox>
+                            </StackPanel>
+                        </Border>
+                        <Border Classes="detailList">
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBlock Classes="detailName"> City </TextBlock> <TextBox Classes="detailValue"></TextBox>
+                            </StackPanel>
+                        </Border>
+                        <Border Classes="detailList">
+                            <StackPanel Orientation="Horizontal" >
+                                <TextBlock Classes="detailName"> Street </TextBlock> <TextBox Classes="detailValue"></TextBox>
+                            </StackPanel>
+                        </Border>
+                        
+                        <StackPanel Orientation="Horizontal" Classes="detailList" >
+                            <TextBlock Classes="detailName"> Postal code </TextBlock> <TextBox Classes="detailValue"></TextBox>
+                        </StackPanel>
+                        
+                    </StackPanel>
+                </Border>
+                
+                <Grid Grid.Row="3">
+                    <Border HorizontalAlignment="Center">
+                        <StackPanel  Orientation="Horizontal" Spacing="50" Margin="0 0 0 100">
+                            <Button Classes="confirm">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Classes="icon_only" Content="&#xE18A;"></Label>
+                                    <Label Content="Confirm"></Label>
+                                </StackPanel>
+                            </Button>
+                            
+                            <Button Classes="cancel">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Classes="icon_only" Content="&#xE4F6;"></Label>
+                                    <Label Content="Cancel"></Label>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

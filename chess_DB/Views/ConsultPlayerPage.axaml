@@ -1,0 +1,33 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="chess_DB.Views.ConsultPlayerPage">
+    <UserControl.Styles>
+        <StyleInclude Source="/Styles/AppDefaultStyle.axaml"></StyleInclude>
+    </UserControl.Styles>
+    <Grid RowDefinitions="Auto,*" Background="{DynamicResource PrimaryBackgroundGradient }">
+        <Grid Grid.Row="0" Height="50">
+            <TextBlock> Player List</TextBlock>
+        </Grid>
+        <Grid Grid.Row="1" ColumnDefinitions="*,Auto">
+            <Grid Margin="50 0 50 50" >
+                <ListBox x:Name="FormListBox" Classes="listPlayer">
+                    <!-- <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text=""></TextBlock>
+                    </DataTemplate>
+                </ListBox.ItemTemplate> !-->
+                </ListBox>
+            </Grid>
+            <StackPanel Grid.Column="1" Width="124">
+                <Button Content="Add" Click="GoToAddPlayerPage"></Button>
+                <Button Content="Edit"></Button>
+                <Button Content="Delete"></Button>
+            </StackPanel>
+        </Grid>
+        
+    </Grid>
+    
+</UserControl>

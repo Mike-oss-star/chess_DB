@@ -29,23 +29,26 @@
                         </TextBlock>
                         <Border Classes="detailList">
                             <StackPanel Orientation="Horizontal" >
-                                <TextBlock Classes="detailName"> Name </TextBlock> <TextBox Classes="detailValue"></TextBox>
+                                <TextBlock Classes="detailName"> Name </TextBlock> 
+                                <TextBox Classes="detailValue" x:Name="NameTextBox"></TextBox>
                             </StackPanel>
                         </Border>
                         <Border Classes="detailList">
                             <StackPanel Orientation="Horizontal" >
-                                <TextBlock Classes="detailName"> Surname </TextBlock> <TextBox Classes="detailValue"></TextBox>
+                                <TextBlock Classes="detailName"> Surname </TextBlock> 
+                                <TextBox Classes="detailValue" x:Name="SurnameTextBox"></TextBox>
                             </StackPanel>
                         </Border>
                         <Border Classes="detailList">
                             <StackPanel Orientation="Horizontal" >
-                                <TextBlock Classes="detailName"> Birthday </TextBlock> <DatePicker></DatePicker>
+                                <TextBlock Classes="detailName"> Birthdate </TextBlock> 
+                                <DatePicker x:Name="BirthdatePicker"></DatePicker>
                             </StackPanel>
                         </Border>
                         
                         <StackPanel Orientation="Horizontal" Classes="detailList" >
                             <TextBlock Classes="detailName"> Gender</TextBlock>
-                            <ComboBox>
+                            <ComboBox x:Name="GenderComboBox">
                                 <ComboBoxItem>Male</ComboBoxItem>
                                 <ComboBoxItem>Female</ComboBoxItem>
                                 <ComboBoxItem>Oder</ComboBoxItem>
@@ -62,12 +65,14 @@
                         </TextBlock>
                         <Border Classes="detailList">
                             <StackPanel Orientation="Horizontal" >
-                                <TextBlock Classes="detailName"> Email </TextBlock> <TextBox Classes="detailValue"></TextBox>
+                                <TextBlock Classes="detailName"> Email </TextBlock> 
+                                <TextBox Classes="detailValue" x:Name="EmailTextBox"></TextBox>
                             </StackPanel>
                         </Border>
                         
                         <StackPanel Orientation="Horizontal" Classes="detailList" >
-                            <TextBlock Classes="detailName"> Phone </TextBlock> <TextBox Classes="detailValue"></TextBox>
+                            <TextBlock Classes="detailName"> Phone </TextBlock> 
+                            <TextBox Classes="detailValue" x:Name="PhoneTextBox"></TextBox>
                         </StackPanel>
                         
                     </StackPanel>
@@ -80,22 +85,26 @@
                         </TextBlock>
                         <Border Classes="detailList">
                             <StackPanel Orientation="Horizontal" >
-                                <TextBlock Classes="detailName"> Country </TextBlock> <TextBox Classes="detailValue"></TextBox>
+                                <TextBlock Classes="detailName"> Country </TextBlock> 
+                                <TextBox Classes="detailValue" x:Name="CountryTextBox"></TextBox>
                             </StackPanel>
                         </Border>
                         <Border Classes="detailList">
                             <StackPanel Orientation="Horizontal" >
-                                <TextBlock Classes="detailName"> City </TextBlock> <TextBox Classes="detailValue"></TextBox>
+                                <TextBlock Classes="detailName"> City </TextBlock> 
+                                <TextBox Classes="detailValue" x:Name="CityTextBox"></TextBox>
                             </StackPanel>
                         </Border>
                         <Border Classes="detailList">
                             <StackPanel Orientation="Horizontal" >
-                                <TextBlock Classes="detailName"> Street </TextBlock> <TextBox Classes="detailValue"></TextBox>
+                                <TextBlock Classes="detailName"> Street </TextBlock>
+                                <TextBox Classes="detailValue" x:Name="StreetTextBox"></TextBox>
                             </StackPanel>
                         </Border>
                         
                         <StackPanel Orientation="Horizontal" Classes="detailList" >
-                            <TextBlock Classes="detailName"> Postal code </TextBlock> <TextBox Classes="detailValue"></TextBox>
+                            <TextBlock Classes="detailName"> Postal code </TextBlock> 
+                            <TextBox Classes="detailValue" x:Name="PostalCodeTextBox"></TextBox>
                         </StackPanel>
                         
                     </StackPanel>
@@ -104,10 +113,10 @@
                 <Grid Grid.Row="3">
                     <Border HorizontalAlignment="Center">
                         <StackPanel  Orientation="Horizontal" Spacing="50" Margin="0 0 0 100">
-                            <Button Classes="confirm">
+                            <Button Classes="confirm" Click="SaveClick">
                                 <StackPanel Orientation="Horizontal">
                                     <Label Classes="icon_only" Content="&#xE18A;"></Label>
-                                    <Label Content="Confirm"></Label>
+                                    <Label Content="Confirm" ></Label>
                                 </StackPanel>
                             </Button>
                             

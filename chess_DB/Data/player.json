@@ -1,0 +1,10 @@
+﻿[
+  {
+    "Name": "Dupont",
+    "Surname": "Alice",
+    "Birthday":"2025-10-27T00:00:00",
+    "Gender": "female",
+    "Email": "alice@mail.com",
+    "Age": 25
+  }
+]

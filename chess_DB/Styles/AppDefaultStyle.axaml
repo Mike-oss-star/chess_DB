@@ -136,5 +136,13 @@
         <Setter Property="FontFamily" Value="{DynamicResource Phosphor}"></Setter>
     </Style>
     
+    <Style Selector="ListBox.listPlayer">
+        <Setter Property="Background" Value="#151E3E"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+        <Setter Property="BorderThickness" Value="0.5"></Setter>
+        <Setter Property="BorderBrush" Value="#808080"></Setter>
+        <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
+    </Style>
     
 </Styles>

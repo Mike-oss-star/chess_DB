@@ -26,4 +26,12 @@ public partial class PlayerPageView : UserControl
             mainView.MainContent.Content = new AddPlayerPage();
         }
     }
+    
+    private void GoToConsultPlayerPage(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        if (VisualRoot is MainView mainView)
+        {
+            mainView.MainContent.Content = new ConsultPlayerPage();
+        }
+    }
 }

@@ -39,7 +39,7 @@
                         </StackPanel>
                     </Button>
                     
-                    <Button Classes="home">
+                    <Button Classes="home" Click="GoToConsultPlayerPage">
                         <StackPanel>
                             <Label Classes="icon" Content="&#xE23A;"></Label>
                             <TextBlock Classes="homeText">

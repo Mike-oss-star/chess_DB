@@ -1,0 +1,138 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="chess_DB.Views.AddCompetitionPage">
+    <UserControl.Styles>
+        <StyleInclude Source="/Styles/AppDefaultStyle.axaml"></StyleInclude>
+    </UserControl.Styles>
+    
+    <Grid Background="{DynamicResource PrimaryBackgroundGradient}" RowDefinitions="Auto,*,Auto">
+        <Border Grid.Row="0" Padding="1">
+            <Grid ColumnDefinitions="Auto,*">
+                <Button Grid.Column="0" Classes="transparent" Height="50" Width="50" Click="GoToHomePage" >
+                    <Label Content="&#xE2C2;"></Label>
+                </Button>
+                <TextBlock Grid.Column="1" TextAlignment="Center" Classes="title1">
+                    Create Competition 
+                </TextBlock>
+            </Grid>
+        </Border>
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible">
+            <Grid RowDefinitions="*,*">
+                <Border Classes="form">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal"  Spacing="50" Classes="blockInfo">
+                            <StackPanel Classes="detailPanel">
+                                <TextBlock Classes="detailName">ID</TextBlock>
+                                <TextBox></TextBox>
+                            </StackPanel>
+                            <StackPanel Classes="detailPanel">
+                                <TextBlock Classes="detailName">Type</TextBlock>
+                                <ComboBox Width="200">
+                                    <ComboBoxItem>Open Tournament</ComboBoxItem>
+                                    <ComboBoxItem>Championship</ComboBoxItem>
+                                    <ComboBoxItem>By teams</ComboBoxItem>
+                                    <ComboBoxItem> Qualifying Tournament</ComboBoxItem>
+                                    <ComboBoxItem>Friendly Tournament</ComboBoxItem>
+                                    <ComboBoxItem>Giant Blitz</ComboBoxItem>
+                                </ComboBox>
+                            </StackPanel>
+                        </StackPanel>
+                        
+                        <StackPanel Classes="blockInfo">
+                            <TextBlock Classes="detailName">Name</TextBlock>
+                            <TextBox></TextBox>
+                        </StackPanel>
+                        
+                        <StackPanel Classes="blockInfo">
+                            <TextBlock Classes="detailName">Place</TextBlock>
+                            <TextBox></TextBox>
+                        </StackPanel>
+                        
+                        <StackPanel Orientation="Horizontal" Spacing="50" Classes="blockInfo">
+                            <StackPanel>
+                                <TextBlock Classes="detailName">Start date</TextBlock>
+                                <DatePicker></DatePicker>
+                            </StackPanel>
+                            <StackPanel>
+                                <TextBlock Classes="detailName">End date</TextBlock>
+                                <DatePicker></DatePicker>
+                            </StackPanel>
+                        </StackPanel>
+                        
+                        <StackPanel Orientation="Horizontal" Spacing="50" Classes="blockInfo">
+                            <StackPanel Classes="detailPanel">
+                                <TextBlock Classes="detailName">System</TextBlock>
+                                <ComboBox Width="200">
+                                    <ComboBoxItem>Swiss System</ComboBoxItem>
+                                    <ComboBoxItem>Round Robin</ComboBoxItem>
+                                    <ComboBoxItem> Knocked Out</ComboBoxItem>
+                                    <ComboBoxItem>Double elimination</ComboBoxItem>
+                                    <ComboBoxItem>By Team System</ComboBoxItem>
+                                    <ComboBoxItem>Hybrid System</ComboBoxItem>
+                                </ComboBox>
+                            </StackPanel>
+                            <StackPanel Classes="detailPanel">
+                                <TextBlock Classes="detailName">Cadence</TextBlock>
+                                <ComboBox Width="200">
+                                    <ComboBoxItem>Classic</ComboBoxItem>
+                                    <ComboBoxItem>Fast</ComboBoxItem>
+                                    <ComboBoxItem>Blitz</ComboBoxItem>
+                                    <ComboBoxItem>Bullet</ComboBoxItem>
+                                    <ComboBoxItem>Fischer</ComboBoxItem>
+                                    <ComboBoxItem>Mixt Cadence</ComboBoxItem>
+                                </ComboBox>
+                            </StackPanel>
+                            <StackPanel Classes="detailPanel">
+                                <TextBlock Classes="detailName">Rule of points</TextBlock>
+                                <TextBox></TextBox>
+                            </StackPanel>
+                        </StackPanel>
+                        
+                        <StackPanel Orientation="Horizontal" Spacing="50" Classes="blockInfo">
+                            <StackPanel Classes="detailPanel">
+                                <TextBlock Classes="detailName">Category</TextBlock>
+                                <ComboBox Width="200">
+                                    <ComboBoxItem>Young</ComboBoxItem>
+                                    <ComboBoxItem>Senior</ComboBoxItem>
+                                    <ComboBoxItem>Female</ComboBoxItem>
+                                    <ComboBoxItem>Mixt</ComboBoxItem>
+                                </ComboBox>
+                            </StackPanel>
+                            <StackPanel Classes="detailPanel">
+                                <TextBlock Classes="detailName">Capacity</TextBlock>
+                                <TextBox></TextBox>
+                            </StackPanel>
+                        </StackPanel>
+                        
+                    </StackPanel>
+                </Border>
+                
+                
+                <Border HorizontalAlignment="Center" Grid.Row="1" Margin="0 30 0 0">
+                    <StackPanel  Orientation="Horizontal" Spacing="50" Margin="0 0 0 100">
+                        <Button Classes="confirm">
+                            <StackPanel Orientation="Horizontal">
+                                <Label Classes="icon_only" Content="&#xE18A;"></Label>
+                                <Label Content="Confirm" ></Label>
+                            </StackPanel>
+                        </Button>
+                        
+                        <Button Classes="cancel">
+                            <StackPanel Orientation="Horizontal">
+                                <Label Classes="icon_only" Content="&#xE4F6;"></Label>
+                                <Label Content="Cancel"></Label>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </Border>
+               
+            </Grid>
+            
+            
+        </ScrollViewer>
+        
+    </Grid>
+</UserControl>

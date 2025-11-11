@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "W8i/wm1ps7s=",
+  "dgSpecHash": "06Qd/CInPAA=",
   "success": true,
   "projectFilePath": "C:\\Users\\branl\\RiderProjects\\chess_DB\\chess_DB\\chess_DB.csproj",
   "expectedPackageFiles": [
@@ -26,6 +26,7 @@
     "C:\\Users\\branl\\.nuget\\packages\\harfbuzzsharp.nativeassets.webassembly\\8.3.1.1\\harfbuzzsharp.nativeassets.webassembly.8.3.1.1.nupkg.sha512",
     "C:\\Users\\branl\\.nuget\\packages\\harfbuzzsharp.nativeassets.win32\\8.3.1.1\\harfbuzzsharp.nativeassets.win32.8.3.1.1.nupkg.sha512",
     "C:\\Users\\branl\\.nuget\\packages\\microcom.runtime\\0.11.0\\microcom.runtime.0.11.0.nupkg.sha512",
+    "C:\\Users\\branl\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\10.0.0\\microsoft.entityframeworkcore.tools.10.0.0.nupkg.sha512",
     "C:\\Users\\branl\\.nuget\\packages\\skiasharp\\2.88.9\\skiasharp.2.88.9.nupkg.sha512",
     "C:\\Users\\branl\\.nuget\\packages\\skiasharp.nativeassets.linux\\2.88.9\\skiasharp.nativeassets.linux.2.88.9.nupkg.sha512",
     "C:\\Users\\branl\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.9\\skiasharp.nativeassets.macos.2.88.9.nupkg.sha512",

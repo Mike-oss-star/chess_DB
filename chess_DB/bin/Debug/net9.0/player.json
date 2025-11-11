@@ -238,5 +238,17 @@
     "City": "",
     "Street": "",
     "PostalCode": ""
+  },
+  {
+    "Name": "",
+    "Surname": "",
+    "Birthdate": null,
+    "Gender": "",
+    "Email": "",
+    "Phone": "",
+    "Country": "",
+    "City": "",
+    "Street": "",
+    "PostalCode": ""
   }
 ]

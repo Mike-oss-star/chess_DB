@@ -20,4 +20,14 @@ public partial class HomePageView : UserControl
             mainView.MainContent.Content = new PlayerPageView();
         }
     }
+    
+    private void GoToCompetitionPage(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        // Trouver la fenêtre parente
+        if (VisualRoot is MainView mainView)
+        {
+            // Remplacer le contenu du ContentControl principal
+            mainView.MainContent.Content = new AddCompetitionPage();
+        }
+    }
 }

@@ -31,10 +31,10 @@
                         </StackPanel>
                     </Button>
                 
-                    <Button Classes="home">
+                    <Button Classes="home" Click="GoToCompetitionPage">
                         <StackPanel>
                             <Label Classes="icon" Content="&#xE67E;"></Label>
-                            <TextBlock Classes="homeText">
+                            <TextBlock Classes="homeText" >
                                 Competitions
                             </TextBlock>
                         </StackPanel>

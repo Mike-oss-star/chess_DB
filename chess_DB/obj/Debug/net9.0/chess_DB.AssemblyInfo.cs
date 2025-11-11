@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("chess_DB")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c971983a5cfaf0dc49706c5f5c51ee7583776b64")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a82f785940c11d53f518c2d5c855d1a74463fb62")]
 [assembly: System.Reflection.AssemblyProductAttribute("chess_DB")]
 [assembly: System.Reflection.AssemblyTitleAttribute("chess_DB")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

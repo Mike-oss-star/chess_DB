@@ -145,4 +145,21 @@
         <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
     </Style>
     
+    <Style Selector="Border.form">
+        <Setter Property="Width" Value="800"></Setter>
+        <Setter Property="Padding" Value="20 10 20 20"></Setter>
+        <Setter Property="BorderThickness" Value="0.5"></Setter>
+        <Setter Property="BorderBrush" Value="#808080"></Setter>
+        <Setter Property="Height" Value="510"></Setter>
+    </Style>
+    
+    <Style Selector="StackPanel.detailPanel">
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Width" Value="200"></Setter>
+    </Style>
+    
+    <Style Selector="StackPanel.blockInfo">
+        <Setter Property="Margin" Value="0 30 0 0"></Setter>
+    </Style>
+    
 </Styles>

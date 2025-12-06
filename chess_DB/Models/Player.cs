@@ -4,7 +4,7 @@ namespace chess_DB.Models;
 
 public class Player
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
     public string Name { get; set; }
     public string Surname { get; set; }
     public DateTime? Birthdate { get; set; }
@@ -16,5 +16,9 @@ public class Player
     public string Street { get; set; }
     public string PostalCode { get; set; }
     public int EloRanking { get; set; }
-
+    
+    public Player()
+    {
+        Id = Guid.NewGuid(); // Génère un ID unique
+    }
 }

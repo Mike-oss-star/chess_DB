@@ -17,7 +17,7 @@ public partial class HomePageView : UserControl
         if (VisualRoot is MainView mainView)
         {
             // Remplacer le contenu du ContentControl principal
-            mainView.MainContent.Content = new PlayerPageView();
+            //mainView.MainContent.Content = new PlayerPageView();
         }
     }
     
@@ -27,7 +27,7 @@ public partial class HomePageView : UserControl
         if (VisualRoot is MainView mainView)
         {
             // Remplacer le contenu du ContentControl principal
-            mainView.MainContent.Content = new AddCompetitionPage();
+            //mainView.MainContent.Content = new AddCompetitionPage();
         }
     }
 }

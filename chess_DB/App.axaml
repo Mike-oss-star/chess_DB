@@ -1,12 +1,17 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="chess_DB.App"
+             xmlns:local="clr-namespace:chess_DB"
              RequestedThemeVariant="Default">
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.Styles>
         <FluentTheme />
     </Application.Styles>
+             
+     <Application.DataTemplates>
+         <local:ViewLocator></local:ViewLocator>
+     </Application.DataTemplates>
              
     <Application.Resources>
         <LinearGradientBrush x:Key="PrimaryBackgroundGradient" StartPoint="0%, 0%" EndPoint="100%, 100%" >

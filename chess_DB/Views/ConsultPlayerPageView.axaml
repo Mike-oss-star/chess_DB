@@ -3,7 +3,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="chess_DB.Views.ConsultPlayerPage">
+             xmlns:vm="clr-namespace:chess_DB.ViewModels"
+             x:DataType="vm:ConsultPlayerPageViewModel"
+             x:Class="chess_DB.Views.ConsultPlayerPageView">
     <UserControl.Styles>
         <StyleInclude Source="/Styles/AppDefaultStyle.axaml"></StyleInclude>
     </UserControl.Styles>
@@ -13,16 +15,21 @@
         </Grid>
         <Grid Grid.Row="1" ColumnDefinitions="*,Auto">
             <Grid Margin="50 0 50 50" >
-                <ListBox x:Name="FormListBox" Classes="listPlayer">
-                    <!-- <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text=""></TextBlock>
-                    </DataTemplate>
-                </ListBox.ItemTemplate> !-->
+                <ListBox ItemsSource="{Binding Players}" Classes="listPlayer">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Margin="5">
+                                <TextBlock Text="{Binding Name}" />
+                                <TextBlock Text="{Binding Surname}" />
+                                <TextBlock Text="{Binding Email}" FontSize="12" />
+                                <Separator/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
                 </ListBox>
             </Grid>
             <StackPanel Grid.Column="1" Width="124">
-                <Button Content="Add" Click="GoToAddPlayerPage"></Button>
+                <Button Content="Add" ></Button>
                 <Button Content="Edit"></Button>
                 <Button Content="Delete"></Button>
             </StackPanel>

@@ -15,7 +15,7 @@ public partial class AddCompetitionPage : UserControl
     {
         if (VisualRoot is MainView mainView)
         {
-            mainView.MainContent.Content = new HomePageView();
+            //mainView.MainContent.Content = new HomePageView();
         }
     }
 }

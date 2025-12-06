@@ -11,10 +11,7 @@
 
     <!-- Add Styles Here -->
     
-    <Style Selector="Window">
-        <!-- writing style -->
-        <Setter Property="FontFamily" Value="{DynamicResource AkkoPro}"></Setter>
-    </Style>
+  
     
     <!-- parameters of buttons on the home page !-->
     <Style Selector="Button.home, Button.player">

@@ -3,7 +3,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="chess_DB.Views.AddPlayerPage">
+             xmlns:vm="clr-namespace:chess_DB.ViewModels"
+             x:DataType="vm:AddPlayerPageViewModel"
+             x:Class="chess_DB.Views.AddPlayerPageView">
     
     <UserControl.Styles>
         <StyleInclude Source="/Styles/AppDefaultStyle.axaml"></StyleInclude>
@@ -12,7 +14,7 @@
     <Grid RowDefinitions="Auto,*" Background="{DynamicResource PrimaryBackgroundGradient}">
         <Border Grid.Row="0" Padding="1">
             <Grid ColumnDefinitions="Auto,*">
-                <Button Grid.Column="0" Classes="transparent" Height="50" Width="50" Click="GoToHomePage">
+                <Button Grid.Column="0" Classes="transparent" Height="50" Width="50" Command="{Binding GoToHomePageCommand}">
                     <Label Classes="icon-only" Content="&#xE2C2;"></Label>
                 </Button>
                 <TextBlock Grid.Column="1" TextAlignment="Center" Classes="title1">
@@ -30,25 +32,25 @@
                         <Border Classes="detailList">
                             <StackPanel Orientation="Horizontal" >
                                 <TextBlock Classes="detailName"> Name </TextBlock> 
-                                <TextBox Classes="detailValue" x:Name="NameTextBox"></TextBox>
+                                <TextBox Classes="detailValue" Text="{Binding Name}"></TextBox>
                             </StackPanel>
                         </Border>
                         <Border Classes="detailList">
                             <StackPanel Orientation="Horizontal" >
                                 <TextBlock Classes="detailName"> Surname </TextBlock> 
-                                <TextBox Classes="detailValue" x:Name="SurnameTextBox"></TextBox>
+                                <TextBox Classes="detailValue" Text="{Binding Surname}"></TextBox>
                             </StackPanel>
                         </Border>
                         <Border Classes="detailList">
                             <StackPanel Orientation="Horizontal" >
                                 <TextBlock Classes="detailName"> Birthdate </TextBlock> 
-                                <DatePicker x:Name="BirthdatePicker"></DatePicker>
+                                <DatePicker SelectedDate="{Binding Birthdate}"></DatePicker>
                             </StackPanel>
                         </Border>
                         
                         <StackPanel Orientation="Horizontal" Classes="detailList" >
                             <TextBlock Classes="detailName"> Gender</TextBlock>
-                            <ComboBox x:Name="GenderComboBox">
+                            <ComboBox SelectedItem="{Binding Gender}">
                                 <ComboBoxItem>Male</ComboBoxItem>
                                 <ComboBoxItem>Female</ComboBoxItem>
                                 <ComboBoxItem>Oder</ComboBoxItem>
@@ -66,13 +68,13 @@
                         <Border Classes="detailList">
                             <StackPanel Orientation="Horizontal" >
                                 <TextBlock Classes="detailName"> Email </TextBlock> 
-                                <TextBox Classes="detailValue" x:Name="EmailTextBox"></TextBox>
+                                <TextBox Classes="detailValue" Text="{Binding Email}"></TextBox>
                             </StackPanel>
                         </Border>
                         
                         <StackPanel Orientation="Horizontal" Classes="detailList" >
                             <TextBlock Classes="detailName"> Phone </TextBlock> 
-                            <TextBox Classes="detailValue" x:Name="PhoneTextBox"></TextBox>
+                            <TextBox Classes="detailValue" Text="{Binding Phone}"></TextBox>
                         </StackPanel>
                         
                     </StackPanel>
@@ -86,25 +88,25 @@
                         <Border Classes="detailList">
                             <StackPanel Orientation="Horizontal" >
                                 <TextBlock Classes="detailName"> Country </TextBlock> 
-                                <TextBox Classes="detailValue" x:Name="CountryTextBox"></TextBox>
+                                <TextBox Classes="detailValue" Text="{Binding Country}"></TextBox>
                             </StackPanel>
                         </Border>
                         <Border Classes="detailList">
                             <StackPanel Orientation="Horizontal" >
                                 <TextBlock Classes="detailName"> City </TextBlock> 
-                                <TextBox Classes="detailValue" x:Name="CityTextBox"></TextBox>
+                                <TextBox Classes="detailValue" Text="{Binding City}"></TextBox>
                             </StackPanel>
                         </Border>
                         <Border Classes="detailList">
                             <StackPanel Orientation="Horizontal" >
                                 <TextBlock Classes="detailName"> Street </TextBlock>
-                                <TextBox Classes="detailValue" x:Name="StreetTextBox"></TextBox>
+                                <TextBox Classes="detailValue" Text="{Binding Street}"></TextBox>
                             </StackPanel>
                         </Border>
                         
                         <StackPanel Orientation="Horizontal" Classes="detailList" >
                             <TextBlock Classes="detailName"> Postal code </TextBlock> 
-                            <TextBox Classes="detailValue" x:Name="PostalCodeTextBox"></TextBox>
+                            <TextBox Classes="detailValue" Text="{Binding PostalCode}"></TextBox>
                         </StackPanel>
                         
                     </StackPanel>
@@ -113,7 +115,7 @@
                 <Grid Grid.Row="3">
                     <Border HorizontalAlignment="Center">
                         <StackPanel  Orientation="Horizontal" Spacing="50" Margin="0 0 0 100">
-                            <Button Classes="confirm" Click="SaveClick">
+                            <Button Classes="confirm" Command="{Binding SaveCommand}">
                                 <StackPanel Orientation="Horizontal">
                                     <Label Classes="icon_only" Content="&#xE18A;"></Label>
                                     <Label Content="Confirm" ></Label>

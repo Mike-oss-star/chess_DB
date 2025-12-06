@@ -1,10 +1,30 @@
-﻿[
+[
   {
+    "Id": "7f4576b7-306b-40ed-964b-b23d1be117fb",
     "Name": "Dupont",
     "Surname": "Alice",
-    "Birthday":"2025-10-27T00:00:00",
+    "Birthdate": null,
     "Gender": "female",
     "Email": "alice@mail.com",
-    "Age": 25
+    "Phone": null,
+    "Country": null,
+    "City": null,
+    "Street": null,
+    "PostalCode": null,
+    "EloRanking": 0
+  },
+  {
+    "Id": "e8563ce2-eecc-45b0-ac25-ee3577c1bd6b",
+    "Name": "L",
+    "Surname": "L",
+    "Birthdate": null,
+    "Gender": "Avalonia.Controls.ComboBoxItem",
+    "Email": "L",
+    "Phone": "L",
+    "Country": "L",
+    "City": "L",
+    "Street": "L",
+    "PostalCode": "L",
+    "EloRanking": 0
   }
 ]

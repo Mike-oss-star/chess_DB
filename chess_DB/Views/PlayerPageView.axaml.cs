@@ -15,7 +15,7 @@ public partial class PlayerPageView : UserControl
     {
         if (VisualRoot is MainView mainView)
         {
-            mainView.MainContent.Content = new HomePageView();
+            //mainView.MainContent.Content = new HomePageView();
         }
     }
     
@@ -23,7 +23,7 @@ public partial class PlayerPageView : UserControl
     {
         if (VisualRoot is MainView mainView)
         {
-            mainView.MainContent.Content = new AddPlayerPage();
+            //mainView.MainContent.Content = new AddPlayerPage();
         }
     }
     
@@ -31,7 +31,7 @@ public partial class PlayerPageView : UserControl
     {
         if (VisualRoot is MainView mainView)
         {
-            mainView.MainContent.Content = new ConsultPlayerPage();
+            //mainView.MainContent.Content = new ConsultPlayerPage();
         }
     }
 }

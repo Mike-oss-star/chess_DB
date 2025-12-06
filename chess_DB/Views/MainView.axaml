@@ -5,10 +5,14 @@
         mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="600"
         Width="1024" Height="600"
         x:Class="chess_DB.MainView"
+        xmlns:vm="clr-namespace:chess_DB.ViewModels"
+        x:DataType="vm:MainViewModel"
         Title="chess_DB">
     
-        <ContentControl x:Name="MainContent"
-                        HorizontalAlignment="Stretch"
-                        VerticalAlignment="Stretch"/>
+    <Design.DataContext><vm:MainViewModel></vm:MainViewModel></Design.DataContext>
+    
+    <ContentControl Content="{Binding CurrentPage}"
+                     HorizontalAlignment="Stretch"
+                     VerticalAlignment="Stretch"/>
     
 </Window>

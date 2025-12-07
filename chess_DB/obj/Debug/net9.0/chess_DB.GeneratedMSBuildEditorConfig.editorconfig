@@ -32,10 +32,13 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [C:/Users/branl/RiderProjects/chess_DB/chess_DB/Styles/AppDefaultStyle.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/branl/RiderProjects/chess_DB/chess_DB/Views/AddCompetitionPage.axaml]
+[C:/Users/branl/RiderProjects/chess_DB/chess_DB/Views/AddCompetitionPageView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [C:/Users/branl/RiderProjects/chess_DB/chess_DB/Views/AddPlayerPageView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/branl/RiderProjects/chess_DB/chess_DB/Views/CompetitionPageView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [C:/Users/branl/RiderProjects/chess_DB/chess_DB/Views/ConsultPlayerPageView.axaml]

@@ -68,4 +68,6 @@ public partial class ConsultPlayerPageViewModel : ViewModelBase
 
         Players.Remove(player);  // Mise à jour UI
     }
+    
+    
 }

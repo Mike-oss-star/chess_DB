@@ -73,4 +73,5 @@ public partial class AddPlayerPageViewModel : ViewModelBase
         // Ou retour à l'accueil :
         _mainViewModel.CurrentPage = new HomePageViewModel(_mainViewModel);
     }
+    
 }

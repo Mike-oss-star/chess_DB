@@ -3,7 +3,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="chess_DB.Views.AddCompetitionPage">
+             x:Class="chess_DB.Views.AddCompetitionPageView"
+             xmlns:vm="clr-namespace:chess_DB.ViewModels"
+             x:DataType="vm:AddCompetitionPageViewModel">
     <UserControl.Styles>
         <StyleInclude Source="/Styles/AppDefaultStyle.axaml"></StyleInclude>
     </UserControl.Styles>
@@ -11,7 +13,7 @@
     <Grid Background="{DynamicResource PrimaryBackgroundGradient}" RowDefinitions="Auto,*,Auto">
         <Border Grid.Row="0" Padding="1">
             <Grid ColumnDefinitions="Auto,*">
-                <Button Grid.Column="0" Classes="transparent" Height="50" Width="50" Click="GoToHomePage" >
+                <Button Grid.Column="0" Classes="transparent" Height="50" Width="50" Command="{Binding GoToHomePageCommand}">
                     <Label Content="&#xE2C2;"></Label>
                 </Button>
                 <TextBlock Grid.Column="1" TextAlignment="Center" Classes="title1">

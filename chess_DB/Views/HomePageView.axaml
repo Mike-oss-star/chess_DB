@@ -35,7 +35,7 @@
                         </StackPanel>
                     </Button>
                 
-                    <Button Classes="home" Click="GoToCompetitionPage">
+                    <Button Classes="home" Command="{Binding GoToCompetitionPageCommand}">
                         <StackPanel>
                             <Label Classes="icon" Content="&#xE67E;"></Label>
                             <TextBlock Classes="homeText" >

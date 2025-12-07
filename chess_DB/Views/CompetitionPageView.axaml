@@ -6,8 +6,8 @@
              HorizontalAlignment="Stretch"
              VerticalAlignment="Stretch"
              xmlns:vm="clr-namespace:chess_DB.ViewModels"
-             x:DataType="vm:PlayerPageViewModel"
-             x:Class="chess_DB.Views.PlayerPageView">
+             x:DataType="vm:CompetitionPageViewModel"
+             x:Class="chess_DB.Views.CompetitionPageView">
     <UserControl.Styles>
         <StyleInclude Source="/Styles/AppDefaultStyle.axaml"></StyleInclude>
     </UserControl.Styles>
@@ -23,11 +23,11 @@
                 <Grid Grid.Column="0"  Width="50">
                 </Grid>
                 <StackPanel Grid.Column="1"  Orientation="Horizontal" Spacing="50">
-                    <Button Classes="home" Command="{Binding GoToAddPlayerPageCommand}">
+                    <Button Classes="home" Command="{Binding GoToAddCompetitionPageCommand}">
                         <StackPanel>
-                            <Label Classes="icon" Content="&#xE4D0;"></Label>
+                            <Label Classes="icon" Content="&#xE236;"></Label>
                             <TextBlock Classes="homeText">
-                                Add
+                                Create
                             </TextBlock>
                         </StackPanel>
                     </Button>
@@ -41,7 +41,7 @@
                         </StackPanel>
                     </Button>
                     
-                    <Button Classes="home" Command="{Binding GoToConsultPlayerPageCommand}">
+                    <Button Classes="home" >
                         <StackPanel>
                             <Label Classes="icon" Content="&#xE23A;"></Label>
                             <TextBlock Classes="homeText">
@@ -55,15 +55,6 @@
                             <Label Classes="icon" Content="&#xE4A6;"></Label>
                             <TextBlock Classes="homeText">
                                 Remove
-                            </TextBlock>    
-                        </StackPanel>
-                    </Button>
-                    
-                    <Button Classes="home" Click="GoToHomePage">
-                        <StackPanel>
-                            <Label Classes="icon" Content="&#xE7E6;"></Label>
-                            <TextBlock Classes="homeText">
-                                Go Back
                             </TextBlock>    
                         </StackPanel>
                     </Button>

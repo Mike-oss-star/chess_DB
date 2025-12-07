@@ -21,6 +21,6 @@ public partial class HomePageViewModel : ViewModelBase
     [RelayCommand]
     private void GoToCompetitionPage()
     {
-        //_mainViewModel.CurrentPage = new AddCompetitionPageViewModel();
+        _mainViewModel.CurrentPage = new CompetitionPageViewModel(_mainViewModel);
     }
 }

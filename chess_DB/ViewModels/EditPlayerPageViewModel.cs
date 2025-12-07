@@ -92,4 +92,10 @@ public partial class EditPlayerPageViewModel : ViewModelBase
     {
         _mainViewModel.CurrentPage = new ConsultPlayerPageViewModel(_mainViewModel);
     }
+    
+    [RelayCommand]
+    private void GoToHomePage()
+    {
+        _mainViewModel.CurrentPage = new HomePageViewModel(_mainViewModel);
+    }
 }

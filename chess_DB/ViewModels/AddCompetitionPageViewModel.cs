@@ -28,10 +28,16 @@ public partial class AddCompetitionPageViewModel : ViewModelBase
     }
 
     // 🟦 Propriétés bindables
+    [ObservableProperty] private string type = "";
     [ObservableProperty] private string name = "";
-    [ObservableProperty] private string description = "";
+    [ObservableProperty] private string place = "";
     [ObservableProperty] private DateTimeOffset? startDate;
     [ObservableProperty] private DateTimeOffset? endDate;
+    [ObservableProperty] private string system = "";
+    [ObservableProperty] private string cadence = "";
+    [ObservableProperty] private string rule = "";
+    [ObservableProperty] private string category = "";
+    [ObservableProperty] private int capacity = 0;
 
     // 🟦 Liste des joueurs pour le MultiSelect
     public ObservableCollection<Player> Players { get; } = new();
@@ -62,10 +68,16 @@ public partial class AddCompetitionPageViewModel : ViewModelBase
     {
         var competition = new Competition
         {
+            Type = Type,
             Name = Name,
-            Description = Description,
+            Place = Place,
             StartDate = StartDate?.DateTime ?? DateTime.Now,
             EndDate = EndDate?.DateTime ?? DateTime.Now,
+            System = System,
+            Cadence = Cadence,
+            Rule = Rule,
+            Category = Category,
+            Capacity = Capacity,
             JoueursIds = new List<Guid>()
         };
 

@@ -1,2 +1,16 @@
-{
-}
+[
+  {
+    "Id": "374b65ed-47f4-476f-afd6-a5d85e414688",
+    "Type": "Avalonia.Controls.ComboBoxItem",
+    "Name": "L",
+    "Place": "",
+    "StartDate": "2025-12-09T00:00:00",
+    "EndDate": "2025-12-09T00:00:00",
+    "System": "Avalonia.Controls.ComboBoxItem",
+    "Cadence": "Avalonia.Controls.ComboBoxItem",
+    "Rule": "L",
+    "Category": "Avalonia.Controls.ComboBoxItem",
+    "Capacity": 0,
+    "JoueursIds": []
+  }
+]

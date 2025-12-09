@@ -19,7 +19,7 @@ public partial class EditPlayerPageViewModel : ViewModelBase
     [ObservableProperty] private string name;
     [ObservableProperty] private string surname;
     [ObservableProperty] private string gender;
-    [ObservableProperty] private DateTime? birthdate;
+    [ObservableProperty] private DateTimeOffset? birthdate;
     [ObservableProperty] private string email;
     [ObservableProperty] private string phone;
     [ObservableProperty] private string country;

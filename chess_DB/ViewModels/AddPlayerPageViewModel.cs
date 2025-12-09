@@ -4,6 +4,7 @@ using chess_DB.Models;
 using chess_DB.Services;
 using System;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace chess_DB.ViewModels;
 
@@ -18,12 +19,19 @@ public partial class AddPlayerPageViewModel : ViewModelBase
         _mainViewModel = mainViewModel;
         _playerService = new PlayerService(); // ⚠️ Service instancié ici
     }
+    
+    public List<string> Genders { get; } = new()
+    {
+        "Male",
+        "Female",
+        "Other"
+    };
 
     // 🟦 Champs bindables
     [ObservableProperty] private string name = "";
     [ObservableProperty] private string surname = "";
     [ObservableProperty] private string gender = "";
-    [ObservableProperty] private DateTime? birthdate;
+    [ObservableProperty] private DateTimeOffset? birthdate;
     [ObservableProperty] private string email = "";
     [ObservableProperty] private string phone = "";
     [ObservableProperty] private string country = "";

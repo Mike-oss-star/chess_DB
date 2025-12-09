@@ -26,5 +26,19 @@
     "Street": "L",
     "PostalCode": "L",
     "EloRanking": 0
+  },
+  {
+    "Id": "f95917bc-b772-41a0-bb5d-e2c3adc063dc",
+    "Name": "L",
+    "Surname": "l",
+    "Birthdate": "2025-12-09T00:00:00+01:00",
+    "Gender": "Avalonia.Controls.ComboBoxItem",
+    "Email": "L",
+    "Phone": "L",
+    "Country": "l",
+    "City": "l",
+    "Street": "l",
+    "PostalCode": "l",
+    "EloRanking": 0
   }
 ]

@@ -19,7 +19,7 @@ public partial class CompetitionPageViewModel:ViewModelBase
     [RelayCommand]
     private void GoToAddCompetitionPage()
     {
-        _mainViewModel.CurrentPage = new AddCompetitionPageViewModel(_mainViewModel);
+        _mainViewModel.CurrentPage = new AddCompetitionPageViewModel(_mainViewModel,new CompetitionService(),new PlayerService());
     }
     
     [RelayCommand]

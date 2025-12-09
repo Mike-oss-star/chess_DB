@@ -3,6 +3,8 @@ using CommunityToolkit.Mvvm.Input;
 using chess_DB.Models;
 using chess_DB.Services;
 using System;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace chess_DB.ViewModels;
@@ -12,90 +14,72 @@ public partial class EditPlayerPageViewModel : ViewModelBase
     private readonly MainViewModel _mainViewModel;
     private readonly PlayerService _playerService;
 
-    // 🟦 Le joueur en cours d’édition
-    private Player _player;
+    // Liste de tous les joueurs
+    public ObservableCollection<Player> Players { get; } = new();
 
-    // 🔹 Propriétés bindables
-    [ObservableProperty] private string name;
-    [ObservableProperty] private string surname;
-    [ObservableProperty] private string gender;
-    [ObservableProperty] private DateTimeOffset? birthdate;
-    [ObservableProperty] private string email;
-    [ObservableProperty] private string phone;
-    [ObservableProperty] private string country;
-    [ObservableProperty] private string city;
-    [ObservableProperty] private string street;
-    [ObservableProperty] private string postalCode;
+    // Joueur actuellement sélectionné
+    [ObservableProperty]
+    private Player? selectedPlayer;
 
-    // 🔥 Constructeur : reçoit l’ID du joueur à modifier
-    public EditPlayerPageViewModel(MainViewModel mainViewModel, Guid playerId)
+    // Barre de recherche (ID)
+    [ObservableProperty]
+    private string searchId = "";
+
+    public EditPlayerPageViewModel(MainViewModel mainViewModel)
     {
         _mainViewModel = mainViewModel;
         _playerService = new PlayerService();
 
-        // Chargement des données du joueur
-        _ = LoadPlayerAsync(playerId);
+        LoadPlayers();
     }
 
-    // 🔹 Charge le joueur depuis le JSON
-    private async Task LoadPlayerAsync(Guid id)
+    // Charger tous les joueurs dans Players
+    private async void LoadPlayers()
     {
-        _player = await _playerService.ObtenirJoueurParIdAsync(id)
-                    ?? throw new Exception("Joueur introuvable.");
-
-        // Copier les valeurs dans les propriétés bindées
-        Name = _player.Name;
-        Surname = _player.Surname;
-        Gender = _player.Gender;
-        Birthdate = _player.Birthdate;
-        Email = _player.Email;
-        Phone = _player.Phone;
-        Country = _player.Country;
-        City = _player.City;
-        Street = _player.Street;
-        PostalCode = _player.PostalCode;
+        var joueurs = await _playerService.ObtenirTousLesJoueursAsync();
+        Players.Clear();
+        foreach (var j in joueurs)
+            Players.Add(j);
     }
 
-    // 🟢 Commande : Enregistrer les modifications
+    // 🔵 Commande pour sauvegarder le joueur sélectionné
     [RelayCommand]
     private async Task SaveAsync()
     {
-        // Mise à jour du modèle Player
-        _player.Name = Name;
-        _player.Surname = Surname;
-        _player.Gender = Gender;
-        _player.Birthdate = Birthdate;
-        _player.Email = Email;
-        _player.Phone = Phone;
-        _player.Country = Country;
-        _player.City = City;
-        _player.Street = Street;
-        _player.PostalCode = PostalCode;
-
-        bool ok = await _playerService.ModifierJoueurAsync(_player);
-
-        if (!ok)
+        if (SelectedPlayer != null)
         {
-            Console.WriteLine("❌ Erreur lors de la modification du joueur.");
-            return;
+            bool ok = await _playerService.ModifierJoueurAsync(SelectedPlayer);
+            if (ok)
+            {
+                // Recharge la liste après modification
+                LoadPlayers();
+            }
         }
-
-        Console.WriteLine("✅ Joueur modifié avec succès.");
-
-        // Retour à la liste
-        _mainViewModel.CurrentPage = new ConsultPlayerPageViewModel(_mainViewModel);
     }
 
-    // 🔵 Commande : Annuler
+    // 🔵 Commande pour rechercher un joueur par ID
     [RelayCommand]
-    private void Cancel()
+    private async Task SearchByIdAsync()
     {
-        _mainViewModel.CurrentPage = new ConsultPlayerPageViewModel(_mainViewModel);
+        if (Guid.TryParse(SearchId, out Guid id))
+        {
+            var joueur = await _playerService.ObtenirJoueurParIdAsync(id);
+            if (joueur != null)
+            {
+                SelectedPlayer = joueur;
+
+                // Filtrer la liste pour ne montrer que ce joueur
+                Players.Clear();
+                Players.Add(joueur);
+            }
+        }
     }
-    
+
+    // 🔵 Commande pour réinitialiser la recherche
     [RelayCommand]
-    private void GoToHomePage()
+    private void ResetSearch()
     {
-        _mainViewModel.CurrentPage = new HomePageViewModel(_mainViewModel);
+        SearchId = "";
+        LoadPlayers();
     }
 }

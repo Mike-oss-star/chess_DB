@@ -32,7 +32,7 @@
                         </StackPanel>
                     </Button>
                 
-                    <Button Classes="home">
+                    <Button Classes="home" Command="{Binding GoToEditPlayerPageCommand}">
                         <StackPanel>
                             <Label Classes="icon" Content="&#xEBC6;"></Label>
                             <TextBlock Classes="homeText">

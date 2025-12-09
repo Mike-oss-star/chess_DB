@@ -1,28 +1,49 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="chess_DB.Views.EditPlayerPageView"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:chess_DB.ViewModels"
-             x:DataType="vm:EditPlayerPageViewModel">
+             x:DataType="vm:EditPlayerPageViewModel"
+             x:Class="chess_DB.Views.EditPlayerPageView"
+             mc:Ignorable="d">
 
-    <StackPanel Margin="20">
+    <StackPanel Margin="20" Spacing="10">
 
-        <TextBox Watermark="Nom" Text="{Binding Name}" />
-        <TextBox Watermark="Prénom" Text="{Binding Surname}" />
-        <TextBox Watermark="Genre" Text="{Binding Gender}" />
-        <DatePicker SelectedDate="{Binding Birthdate}" />
-        <TextBox Watermark="Email" Text="{Binding Email}" />
-        <TextBox Watermark="Téléphone" Text="{Binding Phone}" />
-        <TextBox Watermark="Pays" Text="{Binding Country}" />
-        <TextBox Watermark="Ville" Text="{Binding City}" />
-        <TextBox Watermark="Rue" Text="{Binding Street}" />
-        <TextBox Watermark="Code postal" Text="{Binding PostalCode}" />
+        <TextBlock Text="Modifier un joueur" FontSize="22" />
 
-        <Button Content="Enregistrer"
-                Command="{Binding SaveCommand}"
-                Margin="0 10 0 0"/>
+        <!-- Barre de recherche -->
+        <StackPanel Orientation="Horizontal" Spacing="5">
+            <TextBox Width="200" Watermark="Entrer l'ID"
+                     Text="{Binding SearchId, Mode=TwoWay}" />
+            <Button Content="Rechercher" Command="{Binding SearchByIdCommand}" />
+            <Button Content="Réinitialiser" Command="{Binding ResetSearchCommand}" />
+        </StackPanel>
 
-        <Button Content="Annuler"
-                Command="{Binding CancelCommand}" />
+        <!-- Liste des joueurs -->
+        <ListBox ItemsSource="{Binding Players}"
+                 SelectedItem="{Binding SelectedPlayer}"
+                 Height="200">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}" />
+                        <TextBlock Text="{Binding Surname}" FontSize="12" Foreground="Gray"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!-- Formulaire d'édition -->
+        <StackPanel Margin="0,10,0,0" Spacing="5">
+            <TextBox Watermark="Nom" Text="{Binding SelectedPlayer.Name, Mode=TwoWay}" />
+            <TextBox Watermark="Prénom" Text="{Binding SelectedPlayer.Surname, Mode=TwoWay}" />
+            <TextBox Watermark="Email" Text="{Binding SelectedPlayer.Email, Mode=TwoWay}" />
+            <TextBox Watermark="Téléphone" Text="{Binding SelectedPlayer.Phone, Mode=TwoWay}" />
+            <TextBox Watermark="Pays" Text="{Binding SelectedPlayer.Country, Mode=TwoWay}" />
+            <DatePicker SelectedDate="{Binding SelectedPlayer.Birthdate, Mode=TwoWay}" />
+        </StackPanel>
+
+        <Button Content="Sauvegarder" Command="{Binding SaveCommand}" Width="120" />
+
     </StackPanel>
-
 </UserControl>

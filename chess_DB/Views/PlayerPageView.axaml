@@ -50,7 +50,7 @@
                         </StackPanel>
                     </Button>
                     
-                    <Button Classes="home">
+                    <Button Classes="home" Command="{Binding GoToRemovePlayerPageCommand}">
                         <StackPanel>
                             <Label Classes="icon" Content="&#xE4A6;"></Label>
                             <TextBlock Classes="homeText">

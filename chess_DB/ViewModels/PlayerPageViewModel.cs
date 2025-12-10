@@ -34,4 +34,10 @@ public partial class PlayerPageViewModel:ViewModelBase
     {
         _mainViewModel.CurrentPage = new EditPlayerPageViewModel(_mainViewModel);
     }
+    
+    [RelayCommand]
+    private void GoToRemovePlayerPage()
+    {
+        _mainViewModel.CurrentPage = new RemovePlayerPageViewModel(_mainViewModel);
+    }
 }

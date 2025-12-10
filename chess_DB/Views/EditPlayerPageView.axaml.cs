@@ -9,6 +9,5 @@ public partial class EditPlayerPageView : UserControl
     public EditPlayerPageView()
     {
         InitializeComponent();
-        
     }
 }

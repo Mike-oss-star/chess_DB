@@ -1,0 +1,44 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:chess_DB.ViewModels"
+             x:DataType="vm:RemovePlayerPageViewModel"
+             x:Class="chess_DB.Views.RemovePlayerPageView"
+             mc:Ignorable="d">
+    
+    <Design.DataContext><vm:RemovePlayerPageViewModel></vm:RemovePlayerPageViewModel></Design.DataContext>
+
+    <StackPanel Margin="20" Spacing="10">
+
+        <TextBlock Text="Supprimer un joueur" FontSize="22" />
+
+        <!-- Barre de recherche -->
+        <StackPanel Orientation="Horizontal" Spacing="5">
+            <TextBox Width="200" Watermark="Entrer l'ID"
+                     Text="{Binding SearchId, Mode=TwoWay}" />
+            <Button Content="Rechercher" Command="{Binding SearchByIdCommand}" />
+            <Button Content="Réinitialiser" Command="{Binding ResetSearchCommand}" />
+        </StackPanel>
+
+        <!-- Liste des joueurs -->
+        <ListBox ItemsSource="{Binding Players}"
+                 SelectedItem="{Binding SelectedPlayer}"
+                 Height="200">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Spacing="5">
+                        <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Surname}" FontSize="12" Foreground="Gray"/>
+                        <TextBlock Text="{Binding Id}" FontSize="10" Foreground="DarkGray"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!-- Bouton supprimer -->
+        <Button Content="Supprimer le joueur sélectionné"
+                Command="{Binding RemoveCommand}"
+                Width="220" HorizontalAlignment="Left"/>
+    </StackPanel>
+</UserControl>

@@ -33,4 +33,10 @@ public partial class CompetitionPageViewModel:ViewModelBase
     {
         _mainViewModel.CurrentPage = new HomePageViewModel(_mainViewModel);
     }
+    
+    [RelayCommand]
+    private void GoToEditCompetitionPage()
+    {
+        _mainViewModel.CurrentPage = new EditCompetitionPageViewModel(_mainViewModel);
+    }
 }

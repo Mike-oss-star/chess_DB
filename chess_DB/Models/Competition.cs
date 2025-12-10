@@ -10,8 +10,8 @@ public class Competition
     public string Type {get; set;}
     public string Name { get; set; }
     public string Place { get; set; }
-    public DateTime StartDate { get; set; }
-    public DateTime EndDate { get; set; }
+    public DateTimeOffset StartDate { get; set; }
+    public DateTimeOffset EndDate { get; set; }
     public string System { get; set; }
     public string Cadence { get; set; }
     public string Rule { get; set; }

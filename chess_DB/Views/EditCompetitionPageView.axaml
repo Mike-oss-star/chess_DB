@@ -1,0 +1,44 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:chess_DB.ViewModels"
+             x:DataType="vm:EditCompetitionPageViewModel"
+             x:Class="chess_DB.Views.EditCompetitionPageView">
+
+    <Grid ColumnDefinitions="2*,3*" Margin="20">
+
+        <!-- Liste des compétitions -->
+        <ListBox Grid.Column="0"
+                 ItemsSource="{Binding Competitions}"
+                 SelectedItem="{Binding SelectedCompetition}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!-- Formulaire -->
+        <StackPanel Grid.Column="1" Margin="20"
+                    Spacing="10">
+
+            <TextBlock Text="Modifier la compétition" FontSize="20"/>
+
+            <TextBox Watermark="Type" Text="{Binding Type}" />
+            <TextBox Watermark="Nom" Text="{Binding Name}" />
+            <TextBox Watermark="Lieu" Text="{Binding Place}" />
+
+            <DatePicker SelectedDate="{Binding StartDate}" />
+            <DatePicker SelectedDate="{Binding EndDate}" />
+
+            <TextBox Watermark="Système" Text="{Binding System}" />
+            <TextBox Watermark="Cadence" Text="{Binding Cadence}" />
+            <TextBox Watermark="Règle" Text="{Binding Rule}" />
+            <TextBox Watermark="Catégorie" Text="{Binding Category}" />
+            <TextBox Watermark="Capacité"
+                     Text="{Binding Capacity}" />
+
+            <Button Content="Enregistrer"
+                    Command="{Binding SaveCommand}" />
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -39,4 +39,10 @@ public partial class CompetitionPageViewModel:ViewModelBase
     {
         _mainViewModel.CurrentPage = new EditCompetitionPageViewModel(_mainViewModel);
     }
+    
+    [RelayCommand]
+    private void GoToRemoveCompetitionPage()
+    {
+        _mainViewModel.CurrentPage = new RemoveCompetitionPageViewModel(new CompetitionService());
+    }
 }

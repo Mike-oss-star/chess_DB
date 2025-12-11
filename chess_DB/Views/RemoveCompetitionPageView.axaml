@@ -1,0 +1,31 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:chess_DB.ViewModels"
+             x:DataType="vm:RemoveCompetitionPageViewModel"
+             x:Class="chess_DB.Views.RemoveCompetitionPageView">
+
+    <StackPanel Margin="20" Spacing="10">
+
+        <TextBlock Text="Supprimer une compétition" FontSize="22"/>
+
+        <!-- Recherche -->
+        <TextBox Watermark="Rechercher par nom ou ID..."
+                 Text="{Binding SearchText}" />
+
+        <!-- Liste -->
+        <ListBox ItemsSource="{Binding FilteredCompetitions}"
+                 SelectedItem="{Binding SelectedCompetition}"
+                 Height="300">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!-- Bouton supprimer -->
+        <Button Content="Supprimer"
+                Command="{Binding DeleteCommand}"
+                Background="Red" Foreground="White" />
+    </StackPanel>
+</UserControl>

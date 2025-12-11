@@ -25,7 +25,7 @@ public partial class CompetitionPageViewModel:ViewModelBase
     [RelayCommand]
     private void GoToConsultCompetitionPage()
     {
-        //_mainViewModel.CurrentPage = new ConsultPlayerPageViewModel(_mainViewModel);
+        _mainViewModel.CurrentPage = new ConsultCompetitionPageViewModel(new CompetitionService());
     }
 
     [RelayCommand]

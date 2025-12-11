@@ -17,7 +17,7 @@
     "Id": "e8563ce2-eecc-45b0-ac25-ee3577c1bd6b",
     "Name": "Lemon",
     "Surname": "L",
-    "Birthdate": null,
+    "Birthdate": "2025-12-10T00:00:00+01:00",
     "Gender": "Avalonia.Controls.ComboBoxItem",
     "Email": "L",
     "Phone": "L",

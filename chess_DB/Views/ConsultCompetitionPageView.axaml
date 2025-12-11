@@ -1,0 +1,83 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:chess_DB.ViewModels"
+             x:DataType="vm:ConsultCompetitionPageViewModel"
+             x:Class="chess_DB.Views.ConsultCompetitionPageView">
+
+    <Grid ColumnDefinitions="2*,3*" Margin="20" ColumnSpacing="20">
+
+        <!-- ========================= -->
+        <!--   COLONNE 1 : LISTE      -->
+        <!-- ========================= -->
+        <StackPanel Grid.Column="0" Spacing="10">
+
+            <TextBlock Text="Liste des compétitions" FontSize="26"/>
+
+            <TextBox Watermark="Rechercher..." Text="{Binding SearchText}" />
+
+            <ListBox ItemsSource="{Binding CompetitionsFiltered}"
+                     SelectedItem="{Binding SelectedCompetition}">
+                
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border Background="#444" Padding="10" CornerRadius="6" Margin="0,5">
+                            <StackPanel>
+                                <TextBlock Text="{Binding Name}" FontSize="18"/>
+                                <TextBlock Text="{Binding Type}"/>
+                                <TextBlock Text="{Binding StartDate}"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                
+            </ListBox>
+
+        </StackPanel>
+
+
+        <!-- ========================= -->
+        <!--   COLONNE 2 : DÉTAILS     -->
+        <!-- ========================= -->
+        <StackPanel Grid.Column="1" Spacing="10">
+
+            <TextBlock Text="Détails de la compétition" FontSize="26"/>
+
+            <!-- 🔴 Affiché quand aucune compétiton est sélectionnée -->
+            
+
+            <!-- 🟢 Détails complets -->
+            <StackPanel DataContext="{Binding SelectedCompetition}">
+                
+                <TextBlock Text="{Binding Name}" FontSize="22" FontWeight="Bold"/>
+
+                <TextBlock Text="Type :" FontWeight="Bold"/>
+                <TextBlock Text="{Binding Type}"/>
+
+                <TextBlock Text="Lieu :" FontWeight="Bold"/>
+                <TextBlock Text="{Binding Place}"/>
+
+                <TextBlock Text="Dates :" FontWeight="Bold"/>
+                <TextBlock Text="{Binding StartDate}"/>
+                <TextBlock Text="{Binding EndDate}"/>
+
+                <TextBlock Text="Cadence :" FontWeight="Bold"/>
+                <TextBlock Text="{Binding Cadence}"/>
+
+                <TextBlock Text="Règle :" FontWeight="Bold"/>
+                <TextBlock Text="{Binding Rule}"/>
+
+                <TextBlock Text="Catégorie :" FontWeight="Bold"/>
+                <TextBlock Text="{Binding Category}"/>
+
+                <TextBlock Text="Capacité :" FontWeight="Bold"/>
+                <TextBlock Text="{Binding Capacity}"/>
+
+                <TextBlock Text="Joueurs inscrits :" FontWeight="Bold"/>
+                
+
+            </StackPanel>
+
+        </StackPanel>
+
+    </Grid>
+</UserControl>

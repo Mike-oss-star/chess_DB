@@ -7,43 +7,73 @@
              x:Class="chess_DB.Views.EditPlayerPageView"
              mc:Ignorable="d">
 
-    <StackPanel Margin="20" Spacing="10">
+    <UserControl.Styles>
+        <StyleInclude Source="/Styles/AppDefaultStyle.axaml"></StyleInclude>
+    </UserControl.Styles>
+    
+    <Grid RowDefinitions="Auto,*" Background="{DynamicResource PrimaryBackgroundGradient }">
+        
+            <Grid>
+                <TextBlock Text="Modifier un joueur" FontSize="22" />
+            </Grid>
+            
+            <Grid Grid.Row="1" ColumnDefinitions="*,*" Margin="20">
+                <Grid>
+                    <!-- Barre de recherche -->
+                    <StackPanel Spacing="20">
+                        <StackPanel Orientation="Horizontal" Spacing="5">
+                            <TextBox Width="200"  Watermark="Entrer l'ID"
+                                     Text="{Binding SearchId, Mode=TwoWay}" />
+                            <Button Content="Rechercher" Command="{Binding SearchByIdCommand}" />
+                            <Button Content="Réinitialiser" Command="{Binding ResetSearchCommand}" />
+                        </StackPanel>
 
-        <TextBlock Text="Modifier un joueur" FontSize="22" />
-
-        <!-- Barre de recherche -->
-        <StackPanel Orientation="Horizontal" Spacing="5">
-            <TextBox Width="200" Watermark="Entrer l'ID"
-                     Text="{Binding SearchId, Mode=TwoWay}" />
-            <Button Content="Rechercher" Command="{Binding SearchByIdCommand}" />
-            <Button Content="Réinitialiser" Command="{Binding ResetSearchCommand}" />
-        </StackPanel>
-
-        <!-- Liste des joueurs -->
-        <ListBox ItemsSource="{Binding Players}"
-                 SelectedItem="{Binding SelectedPlayer}"
-                 Height="200">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding Name}" />
-                        <TextBlock Text="{Binding Surname}" FontSize="12" Foreground="Gray"/>
+                        <!-- Liste des joueurs -->
+                        <ListBox ItemsSource="{Binding Players}"
+                                 SelectedItem="{Binding SelectedPlayer}"
+                                 VerticalAlignment="Center"
+                                 Classes="listPlayer">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Name}" />
+                                        <TextBlock Text="{Binding Surname}" FontSize="12" Foreground="Gray"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
                     </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-
-        <!-- Formulaire d'édition -->
-        <StackPanel Margin="0,10,0,0" Spacing="5">
-            <TextBox Watermark="Nom" Text="{Binding SelectedPlayer.Name, Mode=TwoWay}" />
-            <TextBox Watermark="Prénom" Text="{Binding SelectedPlayer.Surname, Mode=TwoWay}" />
-            <TextBox Watermark="Email" Text="{Binding SelectedPlayer.Email, Mode=TwoWay}" />
-            <TextBox Watermark="Téléphone" Text="{Binding SelectedPlayer.Phone, Mode=TwoWay}" />
-            <TextBox Watermark="Pays" Text="{Binding SelectedPlayer.Country, Mode=TwoWay}" />
-            <DatePicker SelectedDate="{Binding SelectedPlayer.Birthdate, Mode=TwoWay}" />
-        </StackPanel>
-
-        <Button Content="Sauvegarder" Command="{Binding SaveCommand}" Width="120" />
-
-    </StackPanel>
+                    
+                </Grid>
+                
+                <Grid Grid.Column="1">
+                    <!-- Formulaire d'édition -->
+                    <StackPanel Margin="0,10,0,10" Spacing="5">
+                        <TextBlock>Name</TextBlock>
+                        <TextBox Watermark="Nom" Text="{Binding SelectedPlayer.Name, Mode=TwoWay}" />
+                        
+                        <TextBlock>Surname</TextBlock>
+                        <TextBox Watermark="Prénom" Text="{Binding SelectedPlayer.Surname, Mode=TwoWay}" />
+                        
+                        <TextBlock>Birthdate</TextBlock>
+                        <DatePicker SelectedDate="{Binding SelectedPlayer.Birthdate, Mode=TwoWay}" />
+                        
+                        <TextBlock>Email</TextBlock>
+                        <TextBox Watermark="Email" Text="{Binding SelectedPlayer.Email, Mode=TwoWay}" />
+                        
+                        <TextBlock>Phone</TextBlock>
+                        <TextBox Watermark="Téléphone" Text="{Binding SelectedPlayer.Phone, Mode=TwoWay}" />
+                        
+                        <TextBlock>Country</TextBlock>
+                        <TextBox Watermark="Pays" Text="{Binding SelectedPlayer.Country, Mode=TwoWay}" />
+                        
+                        <Button Content="Sauvegarder" Command="{Binding SaveCommand}" Width="120" />
+                        
+                    </StackPanel>
+                    
+                </Grid>
+                
+            </Grid>
+    </Grid>
+    
 </UserControl>

@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using chess_DB.Services;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
 namespace chess_DB.ViewModels;
@@ -22,5 +23,11 @@ public partial class HomePageViewModel : ViewModelBase
     private void GoToCompetitionPage()
     {
         _mainViewModel.CurrentPage = new CompetitionPageViewModel(_mainViewModel);
+    }
+    
+    [RelayCommand]
+    private void GoToGamePage()
+    {
+        _mainViewModel.CurrentPage = new AddGamePageViewModel();
     }
 }

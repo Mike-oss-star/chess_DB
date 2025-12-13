@@ -1,0 +1,61 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="chess_DB.Views.AddGamePageView"
+             xmlns:vm="clr-namespace:chess_DB.ViewModels"
+             x:DataType="vm:AddGamePageViewModel">
+
+    <StackPanel Margin="25" Spacing="12">
+
+        <TextBlock Text="Encoder une partie" FontSize="26"/>
+        
+        <!-- Compétition -->
+        <ComboBox ItemsSource="{Binding Competitions}"
+                  SelectedItem="{Binding SelectedCompetition}"
+                  PlaceholderText="Compétition">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+
+        <!-- Joueur blanc -->
+        <ComboBox ItemsSource="{Binding PlayersInCompetition}"
+                  SelectedItem="{Binding WhitePlayer}"
+                  PlaceholderText="Joueur Blanc">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <!-- Joueur noir -->
+        <ComboBox ItemsSource="{Binding PlayersInCompetition}"
+                  SelectedItem="{Binding BlackPlayer}"
+                  PlaceholderText="Joueur Noir">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <!-- Résultat -->
+        <ComboBox SelectedItem="{Binding Result}">
+            <ComboBoxItem Content="1-0"/>
+            <ComboBoxItem Content="0-1"/>
+            <ComboBoxItem Content="1/2-1/2"/>
+        </ComboBox>
+
+        <!-- Cadence -->
+        <TextBox Watermark="Cadence"
+                 Text="{Binding Cadence}" />
+
+        
+        
+        <Button Content="Enregistrer la partie"
+                Command="{Binding SaveCommand}" />
+    </StackPanel>
+</UserControl>

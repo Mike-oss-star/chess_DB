@@ -1,0 +1,20 @@
+[
+  {
+    "Id": "2160f299-dfd6-4806-877c-3de758cc518d",
+    "WhitePlayerId": "7f4576b7-306b-40ed-964b-b23d1be117fb",
+    "BlackPlayerId": "e8563ce2-eecc-45b0-ac25-ee3577c1bd6b",
+    "CompetitionId": "489dd296-57a6-4f99-9ded-933b746383b0",
+    "Result": "1-0",
+    "Cadence": "Classique",
+    "Date": "2025-12-13T13:51:06.3037477+01:00"
+  },
+  {
+    "Id": "1d8f089c-4d12-4dda-b2ba-61be9b12ec1a",
+    "WhitePlayerId": "7f4576b7-306b-40ed-964b-b23d1be117fb",
+    "BlackPlayerId": "e8563ce2-eecc-45b0-ac25-ee3577c1bd6b",
+    "CompetitionId": "489dd296-57a6-4f99-9ded-933b746383b0",
+    "Result": "Avalonia.Controls.ComboBoxItem",
+    "Cadence": "Classique",
+    "Date": "2025-12-13T14:23:48.8407255+01:00"
+  }
+]

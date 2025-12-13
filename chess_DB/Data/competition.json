@@ -11,7 +11,10 @@
     "Rule": "POOO",
     "Category": "Avalonia.Controls.ComboBoxItem",
     "Capacity": 100,
-    "JoueursIds": []
+    "JoueursIds": [
+      "7f4576b7-306b-40ed-964b-b23d1be117fb",
+      "e8563ce2-eecc-45b0-ac25-ee3577c1bd6b"
+    ]
   },
   {
     "Id": "5cf1b7fb-ef46-492d-b808-9a5b3ab187c4",

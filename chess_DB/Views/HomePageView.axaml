@@ -53,7 +53,7 @@
                         </StackPanel>
                     </Button>
                     
-                    <Button Classes="home">
+                    <Button Classes="home" Command="{Binding GoToGamePageCommand}">
                         <StackPanel>
                             <Label Classes="icon" Content="&#xE2A0;"></Label>
                             <TextBlock Classes="homeText">

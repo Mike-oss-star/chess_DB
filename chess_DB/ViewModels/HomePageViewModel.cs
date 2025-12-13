@@ -28,6 +28,6 @@ public partial class HomePageViewModel : ViewModelBase
     [RelayCommand]
     private void GoToGamePage()
     {
-        _mainViewModel.CurrentPage = new ConsultGamePageViewModel();
+        _mainViewModel.CurrentPage = new EditGamePageViewModel();
     }
 }

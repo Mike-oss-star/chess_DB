@@ -56,6 +56,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [C:/Users/branl/RiderProjects/chess_DB/chess_DB/Views/EditCompetitionPageView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/branl/RiderProjects/chess_DB/chess_DB/Views/EditGamePageView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/branl/RiderProjects/chess_DB/chess_DB/Views/EditPlayerPageView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

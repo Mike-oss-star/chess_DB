@@ -38,6 +38,6 @@ public partial class GamePageViewModel:ViewModelBase
     [RelayCommand]
     private void GoToRemoveGamePage()
     {
-        _mainViewModel.CurrentPage = new RemovePlayerPageViewModel(_mainViewModel);
+        _mainViewModel.CurrentPage = new RemoveGamePageViewModel();
     }
 }

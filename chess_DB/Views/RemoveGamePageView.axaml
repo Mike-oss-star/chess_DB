@@ -1,0 +1,63 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="chess_DB.Views.RemoveGamePageView"
+             xmlns:vm="clr-namespace:chess_DB.ViewModels"
+             x:DataType="vm:RemoveGamePageViewModel">
+    <Grid ColumnDefinitions="250,10,*" RowDefinitions="Auto,*">
+    <!-- Liste des compétitions et des parties -->
+    <StackPanel Grid.Column="0" Grid.Row="0" Margin="10">
+        <TextBlock Text="Sélectionner la compétition:" FontSize="16"/>
+        <ComboBox ItemsSource="{Binding Competitions}"
+                  SelectedItem="{Binding SelectedCompetition}"
+                  PlaceholderText="Compétition">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <TextBlock Text="Parties:" FontSize="16" Margin="0,10,0,0"/>
+        <ListBox ItemsSource="{Binding Games}"
+                 SelectedItem="{Binding SelectedGame}"
+                 Height="500">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" Spacing="12">
+                        <TextBlock Text="{Binding WhitePlayerId}" Width="80"/>
+                        <TextBlock Text="vs"/>
+                        <TextBlock Text="{Binding BlackPlayerId}" Width="80"/>
+                        <TextBlock Text="{Binding Result}" Width="50"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </StackPanel>
+
+    <Border Grid.Column="1" Background="Gray" Width="2"/>
+
+    <!-- Détails et suppression -->
+    <StackPanel Grid.Column="2" Margin="10">
+        <TextBlock Text="Détails de la partie" FontSize="18" Margin="0,0,0,10"/>
+        <TextBlock Text="Compétition:" FontWeight="Bold"/>
+        <TextBlock Text="{Binding CompetitionName}" Margin="0,0,0,10"/>
+        <TextBlock Text="Joueur Blanc:" FontWeight="Bold"/>
+        <TextBlock Text="{Binding WhitePlayerName}" Margin="0,0,0,10"/>
+        <TextBlock Text="Joueur Noir:" FontWeight="Bold"/>
+        <TextBlock Text="{Binding BlackPlayerName}" Margin="0,0,0,10"/>
+        <TextBlock Text="Résultat:" FontWeight="Bold"/>
+        <TextBlock Text="{Binding SelectedGame.Result}" Margin="0,0,0,10"/>
+        <TextBlock Text="Cadence:" FontWeight="Bold"/>
+        <TextBlock Text="{Binding SelectedGame.Cadence}" Margin="0,0,0,10"/>
+        <TextBlock Text="Date:" FontWeight="Bold"/>
+        <TextBlock Text="{Binding SelectedGame.Date, StringFormat='{}{0:dd/MM/yyyy HH:mm}'}" Margin="0,0,0,10"/>
+        <TextBlock Text="Coups:" FontWeight="Bold"/>
+        <TextBox Text="{Binding SelectedGame.Moves}" AcceptsReturn="True" Height="150" IsReadOnly="True"/>
+        <Button Content="Supprimer la partie" Command="{Binding DeleteSelectedGameCommand}" Margin="0,10,0,0"/>
+    </StackPanel>
+</Grid>
+
+</UserControl>

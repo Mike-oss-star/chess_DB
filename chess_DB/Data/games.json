@@ -10,16 +10,6 @@
     "Moves": "1. e4 e5\r\n2. e2 e3"
   },
   {
-    "Id": "2d90a853-8199-4176-9517-e5531b8f7104",
-    "WhitePlayerId": "e8563ce2-eecc-45b0-ac25-ee3577c1bd6b",
-    "BlackPlayerId": "7f4576b7-306b-40ed-964b-b23d1be117fb",
-    "CompetitionId": "489dd296-57a6-4f99-9ded-933b746383b0",
-    "Result": null,
-    "Cadence": "Classique",
-    "Date": "2025-12-13T14:53:33.3590833+01:00",
-    "Moves": ""
-  },
-  {
     "Id": "14fc84ba-3835-4665-a769-08d8d589dca6",
     "WhitePlayerId": "7f4576b7-306b-40ed-964b-b23d1be117fb",
     "BlackPlayerId": "e8563ce2-eecc-45b0-ac25-ee3577c1bd6b",

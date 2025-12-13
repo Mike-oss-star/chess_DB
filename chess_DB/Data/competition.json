@@ -14,6 +14,11 @@
     "JoueursIds": [
       "7f4576b7-306b-40ed-964b-b23d1be117fb",
       "e8563ce2-eecc-45b0-ac25-ee3577c1bd6b"
+    ],
+    "GameIds": [
+      "9b69a3f9-c821-4cfe-b373-6a1921b73f56",
+      "2d90a853-8199-4176-9517-e5531b8f7104",
+      "14fc84ba-3835-4665-a769-08d8d589dca6"
     ]
   },
   {
@@ -28,7 +33,8 @@
     "Rule": "POOO",
     "Category": "Avalonia.Controls.ComboBoxItem",
     "Capacity": 100,
-    "JoueursIds": []
+    "JoueursIds": [],
+    "GameIds": []
   },
   {
     "Id": "20806590-9e72-486e-8316-dd2ca6270ca8",
@@ -42,7 +48,8 @@
     "Rule": "POOO",
     "Category": "Avalonia.Controls.ComboBoxItem",
     "Capacity": 100,
-    "JoueursIds": []
+    "JoueursIds": [],
+    "GameIds": []
   },
   {
     "Id": "9baa9d68-c8cf-4a5c-92a1-fc889a9fa2c1",
@@ -56,7 +63,8 @@
     "Rule": "POOO",
     "Category": "Avalonia.Controls.ComboBoxItem",
     "Capacity": 100,
-    "JoueursIds": []
+    "JoueursIds": [],
+    "GameIds": []
   },
   {
     "Id": "a8d92385-5838-47c4-be04-e4d239859b21",
@@ -70,7 +78,8 @@
     "Rule": "POOO",
     "Category": "Avalonia.Controls.ComboBoxItem",
     "Capacity": 100,
-    "JoueursIds": []
+    "JoueursIds": [],
+    "GameIds": []
   },
   {
     "Id": "38b71827-ae81-4e3d-891e-5aa741cda301",
@@ -84,7 +93,8 @@
     "Rule": "POOO",
     "Category": "Avalonia.Controls.ComboBoxItem",
     "Capacity": 100,
-    "JoueursIds": []
+    "JoueursIds": [],
+    "GameIds": []
   },
   {
     "Id": "023d82ca-c1a0-44f1-93aa-a113120566d5",
@@ -98,7 +108,8 @@
     "Rule": "POOO",
     "Category": "Avalonia.Controls.ComboBoxItem",
     "Capacity": 100,
-    "JoueursIds": []
+    "JoueursIds": [],
+    "GameIds": []
   },
   {
     "Id": "399bdbbd-ff3a-42a0-812c-77de567b456a",
@@ -112,6 +123,7 @@
     "Rule": "POOO",
     "Category": "Avalonia.Controls.ComboBoxItem",
     "Capacity": 100,
-    "JoueursIds": []
+    "JoueursIds": [],
+    "GameIds": []
   }
 ]

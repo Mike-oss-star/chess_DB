@@ -43,15 +43,20 @@
         </ComboBox>
 
         <!-- Résultat -->
-        <ComboBox SelectedItem="{Binding Result}">
-            <ComboBoxItem Content="1-0"/>
-            <ComboBoxItem Content="0-1"/>
-            <ComboBoxItem Content="1/2-1/2"/>
-        </ComboBox>
+        <ComboBox
+            ItemsSource="{Binding Results}"
+            SelectedItem="{Binding Result, Mode=TwoWay}" />
 
         <!-- Cadence -->
         <TextBox Watermark="Cadence"
                  Text="{Binding Cadence}" />
+        
+        <!-- moves!-->
+        <TextBlock Text="Coups joués"/>
+        <TextBox Text="{Binding Moves}"
+                 AcceptsReturn="True"
+                 Height="120"
+                 Watermark="1. e4 e5 2. Nf3 Nc6..." />
 
         
         

@@ -15,6 +15,8 @@ public class Game
     public string Cadence { get; set; } = "";
 
     public DateTime Date { get; set; }
+    
+    public string Moves { get; set; } = "";
 
     public Game()
     {

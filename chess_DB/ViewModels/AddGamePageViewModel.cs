@@ -19,6 +19,13 @@ public partial class AddGamePageViewModel : ViewModelBase
     // 🔵 Toutes les données
     private List<Player> _allPlayers = new();
 
+    public List<string> Results { get; } = new()
+    {
+        "1-0",
+        "1/2-1/2",
+        "0-1"
+    };
+
     // 🟢 Joueurs filtrés
     public ObservableCollection<Player> PlayersInCompetition { get; } = new();
     public ObservableCollection<Competition> Competitions { get; } = new();
@@ -30,7 +37,8 @@ public partial class AddGamePageViewModel : ViewModelBase
 
     // Champs
     [ObservableProperty] private string result = "1-0";
-    [ObservableProperty] private string cadence = "Classique";
+    [ObservableProperty] private string cadence = "";
+    [ObservableProperty] private string moves = "";
 
     public AddGamePageViewModel()
     {
@@ -80,6 +88,7 @@ public partial class AddGamePageViewModel : ViewModelBase
             WhitePlayer == BlackPlayer)
             return;
 
+        // 1️⃣ Créer la partie
         var game = new Game
         {
             WhitePlayerId = WhitePlayer.Id,
@@ -87,9 +96,28 @@ public partial class AddGamePageViewModel : ViewModelBase
             CompetitionId = SelectedCompetition.Id,
             Result = Result,
             Cadence = Cadence,
-            Date = DateTime.Now
+            Date = DateTime.Now,
+            Moves = Moves // si tu as ajouté les coups
         };
 
-        await _gameService.AddAsync(game);
+        // 2️⃣ Sauvegarder la partie
+        bool saved = await _gameService.AddAsync(game);
+        if (!saved)
+            return;
+
+        // 3️⃣ Ajouter l’ID de la partie à la compétition
+        SelectedCompetition.GameIds.Add(game.Id);
+
+        // 4️⃣ Sauvegarder la compétition modifiée
+        await _competitionService.ModifierCompetitionAsync(SelectedCompetition);
+
+        // 5️⃣ Reset formulaire
+        WhitePlayer = null;
+        BlackPlayer = null;
+        SelectedCompetition = null;
+        Result = "1-0";
+        Cadence = "Classique";
+        Moves = "";
     }
+
 }

@@ -18,6 +18,7 @@ public class Competition
     public string Category { get; set; }
     public int Capacity { get; set; }
     public List<Guid> JoueursIds { get; set; } = new();
+    public List<Guid> GameIds { get; set; } = new();
     public Competition()
     {
         Id = Guid.NewGuid();

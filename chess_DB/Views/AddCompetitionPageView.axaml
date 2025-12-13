@@ -27,19 +27,10 @@
                     <StackPanel>
                         <StackPanel Orientation="Horizontal"  Spacing="50" Classes="blockInfo">
                             <StackPanel Classes="detailPanel">
-                                <TextBlock Classes="detailName">ID</TextBlock>
-                                <TextBox></TextBox>
-                            </StackPanel>
-                            <StackPanel Classes="detailPanel">
                                 <TextBlock Classes="detailName">Type</TextBlock>
-                                <ComboBox Width="200" SelectedItem="{Binding Type}">
-                                    <ComboBoxItem>Open Tournament</ComboBoxItem>
-                                    <ComboBoxItem>Championship</ComboBoxItem>
-                                    <ComboBoxItem>By teams</ComboBoxItem>
-                                    <ComboBoxItem> Qualifying Tournament</ComboBoxItem>
-                                    <ComboBoxItem>Friendly Tournament</ComboBoxItem>
-                                    <ComboBoxItem>Giant Blitz</ComboBoxItem>
-                                </ComboBox>
+                                <ComboBox Width="200"
+                                    ItemsSource="{Binding Types}"
+                                    SelectedItem="{Binding Type, Mode=TwoWay}" />
                             </StackPanel>
                         </StackPanel>
                         
@@ -67,25 +58,15 @@
                         <StackPanel Orientation="Horizontal" Spacing="50" Classes="blockInfo">
                             <StackPanel Classes="detailPanel">
                                 <TextBlock Classes="detailName">System</TextBlock>
-                                <ComboBox Width="200" SelectedItem="{Binding System}">
-                                    <ComboBoxItem>Swiss System</ComboBoxItem>
-                                    <ComboBoxItem>Round Robin</ComboBoxItem>
-                                    <ComboBoxItem> Knocked Out</ComboBoxItem>
-                                    <ComboBoxItem>Double elimination</ComboBoxItem>
-                                    <ComboBoxItem>By Team System</ComboBoxItem>
-                                    <ComboBoxItem>Hybrid System</ComboBoxItem>
-                                </ComboBox>
+                                <ComboBox Width="200"
+                                          ItemsSource="{Binding Systems}"
+                                          SelectedItem="{Binding System, Mode=TwoWay}" />
                             </StackPanel>
                             <StackPanel Classes="detailPanel">
                                 <TextBlock Classes="detailName">Cadence</TextBlock>
-                                <ComboBox Width="200" SelectedItem="{Binding Cadence}">
-                                    <ComboBoxItem>Classic</ComboBoxItem>
-                                    <ComboBoxItem>Fast</ComboBoxItem>
-                                    <ComboBoxItem>Blitz</ComboBoxItem>
-                                    <ComboBoxItem>Bullet</ComboBoxItem>
-                                    <ComboBoxItem>Fischer</ComboBoxItem>
-                                    <ComboBoxItem>Mixt Cadence</ComboBoxItem>
-                                </ComboBox>
+                                <ComboBox Width="200"
+                                          ItemsSource="{Binding Cadences}"
+                                          SelectedItem="{Binding Cadence, Mode=TwoWay}" />
                             </StackPanel>
                             <StackPanel Classes="detailPanel">
                                 <TextBlock Classes="detailName">Rule of points</TextBlock>
@@ -96,12 +77,9 @@
                         <StackPanel Orientation="Horizontal" Spacing="50" Classes="blockInfo">
                             <StackPanel Classes="detailPanel">
                                 <TextBlock Classes="detailName">Category</TextBlock>
-                                <ComboBox Width="200" SelectedItem="{Binding Category}">
-                                    <ComboBoxItem>Young</ComboBoxItem>
-                                    <ComboBoxItem>Senior</ComboBoxItem>
-                                    <ComboBoxItem>Female</ComboBoxItem>
-                                    <ComboBoxItem>Mixt</ComboBoxItem>
-                                </ComboBox>
+                                <ComboBox Width="200"
+                                          ItemsSource="{Binding Categories}"
+                                          SelectedItem="{Binding Category, Mode=TwoWay}" />
                             </StackPanel>
                             <StackPanel Classes="detailPanel">
                                 <TextBlock Classes="detailName" >Capacity</TextBlock>

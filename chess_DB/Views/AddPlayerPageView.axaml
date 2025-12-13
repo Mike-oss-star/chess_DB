@@ -50,11 +50,9 @@
                         
                         <StackPanel Orientation="Horizontal" Classes="detailList" >
                             <TextBlock Classes="detailName"> Gender</TextBlock>
-                            <ComboBox SelectedItem="{Binding Gender}">
-                                <ComboBoxItem>Male</ComboBoxItem>
-                                <ComboBoxItem>Female</ComboBoxItem>
-                                <ComboBoxItem>Oder</ComboBoxItem>
-                            </ComboBox>
+                            <ComboBox
+                                ItemsSource="{Binding Genders}"
+                                SelectedItem="{Binding Gender, Mode=TwoWay}" />
                         </StackPanel>
                          
                     </StackPanel>

@@ -27,6 +27,44 @@ public partial class AddCompetitionPageViewModel : ViewModelBase
         ChargerJoueurs();
     }
 
+    public List<string> Types { get; } = new()
+    {
+        "open Tournament",
+        "Championship",
+        "By teams",
+        "Qualifying Tournament",
+        "Friendly Tournament",
+        "Giant Blitz"
+    };
+
+    public List<string> Systems { get; } = new()
+    {
+        "Swiss System",
+        "Round Robin",
+        "Knocked Out",
+        "Double elimination",
+        "By Team System",
+        "Hybrid System"
+    };
+
+    public List<string> Cadences { get; } = new()
+    {
+        "Classic",
+        "Fast",
+        "Blitz",
+        "Bullet",
+        "Fischer",
+        "Mixt Cadence"
+    };
+
+    public List<string> Categories { get; } = new()
+    {
+        "Young",
+        "Female",
+        "Senior",
+        "Mixt"
+    };
+
     // 🟦 Propriétés bindables
     [ObservableProperty] private string type = "";
     [ObservableProperty] private string name = "";

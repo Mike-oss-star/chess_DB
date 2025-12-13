@@ -26,5 +26,19 @@
     "Street": "L",
     "PostalCode": "L",
     "EloRanking": 0
+  },
+  {
+    "Id": "9a35bd31-fc69-4851-9714-6018a64acf8c",
+    "Name": "M",
+    "Surname": "M",
+    "Birthdate": "2025-12-12T00:00:00+01:00",
+    "Gender": "Male",
+    "Email": "M",
+    "Phone": "M",
+    "Country": "M",
+    "City": "M",
+    "Street": "M",
+    "PostalCode": "M",
+    "EloRanking": 0
   }
 ]

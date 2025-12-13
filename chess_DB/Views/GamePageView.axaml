@@ -1,0 +1,68 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             HorizontalAlignment="Stretch"
+             VerticalAlignment="Stretch"
+             xmlns:vm="clr-namespace:chess_DB.ViewModels"
+             x:DataType="vm:GamePageViewModel"
+             x:Class="chess_DB.Views.GamePageView">
+    <UserControl.Styles>
+        <StyleInclude Source="/Styles/AppDefaultStyle.axaml"></StyleInclude>
+    </UserControl.Styles>
+    
+    <Grid RowDefinitions="Auto,*" Background="{DynamicResource PrimaryBackgroundGradient}">
+        <Border Grid.Row="0" Padding="1">
+            <Button Classes="transparent" Height="50" Command="{Binding GoToHomePageCommand}">
+                <Label Classes="icon-only" Content="&#xE2C2;"></Label>
+            </Button>
+        </Border>
+        <ScrollViewer Grid.Row="1"  HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled">
+            <Grid  ColumnDefinitions="* , *, *" >
+                <Grid Grid.Column="0"  Width="50">
+                </Grid>
+                <StackPanel Grid.Column="1"  Orientation="Horizontal" Spacing="50">
+                    <Button Classes="home" Command="{Binding GoToAddGamePageCommand}">
+                        <StackPanel>
+                            <Label Classes="icon" Content="&#xE236;"></Label>
+                            <TextBlock Classes="homeText">
+                                Create
+                            </TextBlock>
+                        </StackPanel>
+                    </Button>
+                    
+                    <Button Classes="home" Command="{Binding GoToConsultGamePageCommand}">
+                        <StackPanel>
+                            <Label Classes="icon" Content="&#xE23A;"></Label>
+                            <TextBlock Classes="homeText">
+                                Consult
+                            </TextBlock>
+                        </StackPanel>
+                    </Button>
+                    
+                    <Button Classes="home" Command="{Binding GoToEditGamePageCommand}">
+                        <StackPanel>
+                            <Label Classes="icon" Content="&#xEBC6;"></Label>
+                            <TextBlock Classes="homeText">
+                                Edit
+                            </TextBlock>
+                        </StackPanel>
+                    </Button>
+                    
+                    <Button Classes="home" Command="{Binding GoToRemoveGamePageCommand}">
+                        <StackPanel>
+                            <Label Classes="icon" Content="&#xE4A6;"></Label>
+                            <TextBlock Classes="homeText">
+                                Remove
+                            </TextBlock>    
+                        </StackPanel>
+                    </Button>
+                    
+                </StackPanel>
+                <Grid Grid.Column="2" Width="50"></Grid>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+        
+</UserControl>

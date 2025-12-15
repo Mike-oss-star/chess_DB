@@ -73,7 +73,7 @@
                         </StackPanel>
                     </Button>
                     
-                    <Button Classes="home">
+                    <Button Classes="home" Command="{Binding GoToHistoryPageCommand}">
                         <StackPanel>
                             <Label Classes="icon" Content="&#xE3E8;"></Label>
                             <TextBlock Classes="homeText">

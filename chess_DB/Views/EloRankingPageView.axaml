@@ -1,0 +1,60 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:vm="clr-namespace:chess_DB.ViewModels"
+             x:DataType="vm:EloRankingPageViewModel"
+             x:Class="chess_DB.Views.EloRankingPageView">
+    
+    <StackPanel Margin="20">
+        <TextBlock Text="🏆 Classement Elo"
+                   FontSize="22"
+                   FontWeight="Bold"
+                   Margin="0,0,0,15"/>
+
+        <ListBox ItemsSource="{Binding Rankings}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="1"
+                            BorderBrush="Gray"
+                            CornerRadius="6"
+                            Padding="10"
+                            Margin="4">
+
+                        <Grid ColumnDefinitions="40,*,80,80,80">
+                            <!-- Rang -->
+                            <TextBlock Text="{Binding Rank}"
+                                       FontWeight="Bold"/>
+
+                            <!-- Nom -->
+                            <TextBlock Grid.Column="1"
+                                       Text="{Binding PlayerName}"
+                                       FontSize="14"
+                                       FontWeight="Bold"/>
+
+                            <!-- Elo -->
+                            <TextBlock Grid.Column="2"
+                                       Text="{Binding Elo, StringFormat='Elo {0}'}"
+                                       HorizontalAlignment="Center"/>
+
+                            <!-- Victoires -->
+                            <TextBlock Grid.Column="3"
+                                       Text="{Binding Wins, StringFormat='V {0}'}"
+                                       Foreground="Green"
+                                       HorizontalAlignment="Center"/>
+
+                            <!-- Défaites -->
+                            <TextBlock Grid.Column="4"
+                                       Text="{Binding Losses, StringFormat='D {0}'}"
+                                       Foreground="Red"
+                                       HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+    </StackPanel>
+
+</UserControl>

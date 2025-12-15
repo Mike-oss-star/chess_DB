@@ -176,4 +176,11 @@ public class PlayerService
             return false;
         }
     }
+    
+    public async Task SaveAllAsync(List<Player> players)
+    {
+        string json = JsonSerializer.Serialize(players, _jsonOptions);
+        await File.WriteAllTextAsync(_cheminFichier, json);
+    }
+
 }

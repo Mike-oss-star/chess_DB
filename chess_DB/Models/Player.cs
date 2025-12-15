@@ -15,7 +15,7 @@ public class Player
     public string City { get; set; }
     public string Street { get; set; }
     public string PostalCode { get; set; }
-    public int EloRanking { get; set; }
+    public int Elo { get; set; } = 1200;
     
     public Player()
     {

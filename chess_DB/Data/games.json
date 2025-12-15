@@ -18,5 +18,25 @@
     "Cadence": "Classique",
     "Date": "2025-12-13T15:00:52.5699648+01:00",
     "Moves": "1. e4 e5\r\n2. e2 e3"
+  },
+  {
+    "Id": "b2ce656e-c6db-4024-9ef7-e73af6249b04",
+    "WhitePlayerId": "7f4576b7-306b-40ed-964b-b23d1be117fb",
+    "BlackPlayerId": "e8563ce2-eecc-45b0-ac25-ee3577c1bd6b",
+    "CompetitionId": "489dd296-57a6-4f99-9ded-933b746383b0",
+    "Result": "1-0",
+    "Cadence": "Classique",
+    "Date": "2025-12-15T16:08:12.3675272+01:00",
+    "Moves": ""
+  },
+  {
+    "Id": "6928154b-1281-425f-a088-26258deb0d1e",
+    "WhitePlayerId": "7f4576b7-306b-40ed-964b-b23d1be117fb",
+    "BlackPlayerId": "e8563ce2-eecc-45b0-ac25-ee3577c1bd6b",
+    "CompetitionId": "489dd296-57a6-4f99-9ded-933b746383b0",
+    "Result": "1-0",
+    "Cadence": "classic",
+    "Date": "2025-12-15T16:19:08.5204154+01:00",
+    "Moves": ""
   }
 ]

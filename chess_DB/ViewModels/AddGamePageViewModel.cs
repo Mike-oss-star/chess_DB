@@ -37,7 +37,7 @@ public partial class AddGamePageViewModel : ViewModelBase
 
     // Champs
     [ObservableProperty] private string result = "1-0";
-    [ObservableProperty] private string cadence = "";
+    [ObservableProperty] private string cadence = "classic";
     [ObservableProperty] private string moves = "";
 
     public AddGamePageViewModel()

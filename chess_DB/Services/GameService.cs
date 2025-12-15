@@ -118,7 +118,10 @@ public class GameService
 
             string json = JsonSerializer.Serialize(games, _jsonOptions);
             await File.WriteAllTextAsync(_cheminFichier, json);
-
+            
+            // 🔥 recalcul Elo global
+            await RecalculateAllEloAsync();
+            
             return true;
         }
         catch (Exception ex)
@@ -143,7 +146,10 @@ public class GameService
 
             string json = JsonSerializer.Serialize(games, _jsonOptions);
             await File.WriteAllTextAsync(_cheminFichier, json);
-
+            
+            // recalcul Elo global
+            await RecalculateAllEloAsync();
+            
             return true;
         }
         catch (Exception ex)
@@ -182,5 +188,33 @@ public class GameService
         white.Elo = (int)(white.Elo + k * (scoreWhite - expectedWhite));
         black.Elo = (int)(black.Elo + k * (scoreBlack - expectedBlack));
     }
+    
+    public async Task RecalculateAllEloAsync()
+    {
+        var players = await _playerService.ObtenirTousLesJoueursAsync();
+        var games = await GetAllAsync();
+
+        // 🔹 Reset Elo
+        foreach (var p in players)
+            p.Elo = 1200;
+
+        // 🔹 Rejouer les parties dans l'ordre chronologique
+        var orderedGames = games.OrderBy(g => g.Date).ToList();
+
+        foreach (var game in orderedGames)
+        {
+            var white = players.FirstOrDefault(p => p.Id == game.WhitePlayerId);
+            var black = players.FirstOrDefault(p => p.Id == game.BlackPlayerId);
+
+            if (white == null || black == null)
+                continue;
+
+            UpdateElo(white, black, game.Result);
+        }
+
+        // 🔹 Sauvegarde finale
+        await _playerService.SaveAllAsync(players);
+    }
+
 
 }

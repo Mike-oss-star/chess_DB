@@ -1,0 +1,62 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:vm="clr-namespace:chess_DB.ViewModels"
+             x:DataType="vm:PlayerEloHistoryPageViewModel"
+             x:Class="chess_DB.Views.PlayerEloHistoryPageView">
+   <Grid ColumnDefinitions="250,10,*">
+    <!-- Sélection du joueur -->
+    <StackPanel Grid.Column="0" Margin="10">
+        <TextBlock Text="Joueur" FontSize="16"/>
+        <ComboBox ItemsSource="{Binding Players}"
+                  SelectedItem="{Binding SelectedPlayer}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+    </StackPanel>
+
+    <Border Grid.Column="1" Background="Gray" Width="2"/>
+
+    <!-- Historique Elo -->
+    <StackPanel Grid.Column="2" Margin="10">
+        <TextBlock Text="Historique Elo" FontSize="18" Margin="0,0,0,10"/>
+
+        <ListBox ItemsSource="{Binding EloHistory}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="1" BorderBrush="Gray" Padding="8" Margin="4">
+                        <StackPanel Spacing="4">
+
+                            <TextBlock Text="{Binding Date, StringFormat='Date : {0:dd/MM/yyyy}'}"
+                                       FontWeight="Bold"/>
+
+                            <TextBlock Text="{Binding Opponent,
+                                       StringFormat='Adversaire : {0}'}"/>
+
+                            <TextBlock Text="{Binding Result,
+                                       StringFormat='Résultat : {0}'}"/>
+
+                            <StackPanel Orientation="Horizontal" Spacing="12">
+                                <TextBlock Text="{Binding EloBefore,
+                                           StringFormat='Elo avant : {0}'}"/>
+                                <TextBlock Text="→"/>
+                                <TextBlock Text="{Binding EloAfter,
+                                           StringFormat='Elo après : {0}'}"
+                                           FontWeight="Bold"/>
+                            </StackPanel>
+
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </StackPanel>
+</Grid>
+
+
+</UserControl>

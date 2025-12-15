@@ -30,4 +30,10 @@ public partial class HomePageViewModel : ViewModelBase
     {
         _mainViewModel.CurrentPage = new GamePageViewModel(_mainViewModel);
     }
+
+    [RelayCommand]
+    private void GoToEloPage()
+    {
+        _mainViewModel.CurrentPage = new PlayerEloHistoryPageViewModel();
+    }
 }

@@ -63,7 +63,7 @@
                         </StackPanel>
                     </Button>
                     
-                    <Button Classes="home">
+                    <Button Classes="home" Command="{Binding GoToEloPageCommand}">
                         <StackPanel>
                             <Label Classes="icon" Content="&#xED62;"></Label>
                             <TextBlock Classes="homeText">

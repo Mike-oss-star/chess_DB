@@ -42,4 +42,10 @@ public partial class HomePageViewModel : ViewModelBase
     {
         _mainViewModel.CurrentPage = new PlayerEloHistoryPageViewModel();
     }
+    
+    [RelayCommand]
+    private void GoToSubscriptionPage()
+    {
+        _mainViewModel.CurrentPage = new SubscriptionPageViewModel();
+    }
 }

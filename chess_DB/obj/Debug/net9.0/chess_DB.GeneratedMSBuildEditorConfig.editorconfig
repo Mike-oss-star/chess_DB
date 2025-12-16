@@ -88,3 +88,6 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [C:/Users/branl/RiderProjects/chess_DB/chess_DB/Views/RemovePlayerPageView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/branl/RiderProjects/chess_DB/chess_DB/Views/SubscriptionPageView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

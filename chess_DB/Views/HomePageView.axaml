@@ -44,7 +44,7 @@
                         </StackPanel>
                     </Button>
                     
-                    <Button Classes="home">
+                    <Button Classes="home" Command="{Binding GoToSubscriptionPageCommand}">
                         <StackPanel>
                             <Label Classes="icon" Content="&#xE34C;"></Label>
                             <TextBlock Classes="homeText">

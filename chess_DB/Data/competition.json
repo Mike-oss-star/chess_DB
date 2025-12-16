@@ -1,29 +1,5 @@
 [
   {
-    "Id": "489dd296-57a6-4f99-9ded-933b746383b0",
-    "Type": "Avalonia.Controls.ComboBoxItem",
-    "Name": "L",
-    "Place": "L",
-    "StartDate": "2025-10-11T00:00:00+02:00",
-    "EndDate": "2025-12-11T00:00:00+01:00",
-    "System": "Avalonia.Controls.ComboBoxItem",
-    "Cadence": "Avalonia.Controls.ComboBoxItem",
-    "Rule": "POOO",
-    "Category": "Avalonia.Controls.ComboBoxItem",
-    "Capacity": 100,
-    "JoueursIds": [
-      "7f4576b7-306b-40ed-964b-b23d1be117fb",
-      "e8563ce2-eecc-45b0-ac25-ee3577c1bd6b"
-    ],
-    "GameIds": [
-      "9b69a3f9-c821-4cfe-b373-6a1921b73f56",
-      "2d90a853-8199-4176-9517-e5531b8f7104",
-      "14fc84ba-3835-4665-a769-08d8d589dca6",
-      "b2ce656e-c6db-4024-9ef7-e73af6249b04",
-      "6928154b-1281-425f-a088-26258deb0d1e"
-    ]
-  },
-  {
     "Id": "5cf1b7fb-ef46-492d-b808-9a5b3ab187c4",
     "Type": "Avalonia.Controls.ComboBoxItem",
     "Name": "L",

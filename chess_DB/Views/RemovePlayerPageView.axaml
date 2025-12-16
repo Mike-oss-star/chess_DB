@@ -47,7 +47,6 @@
                 <!-- Liste des joueurs -->
                 <ListBox ItemsSource="{Binding Players}"
                          SelectedItem="{Binding SelectedPlayer}"
-                         Height="400"
                          Classes="listPlayer">
                     <ListBox.ItemTemplate>
                         <DataTemplate>

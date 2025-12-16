@@ -12,6 +12,7 @@ namespace chess_DB.ViewModels
     public partial class RemoveCompetitionPageViewModel : ViewModelBase
     {
         private readonly CompetitionService _competitionService;
+        private readonly MainViewModel _mainViewModel;
 
         [ObservableProperty]
         private string searchText = "";
@@ -22,8 +23,9 @@ namespace chess_DB.ViewModels
         public ObservableCollection<Competition> Competitions { get; set; } = new();
         public ObservableCollection<Competition> FilteredCompetitions { get; set; } = new();
 
-        public RemoveCompetitionPageViewModel(CompetitionService competitionService)
+        public RemoveCompetitionPageViewModel(MainViewModel mainViewModel, CompetitionService competitionService)
         {
+            _mainViewModel= mainViewModel;
             _competitionService = competitionService;
             LoadCompetitions();
         }
@@ -65,6 +67,18 @@ namespace chess_DB.ViewModels
             await _competitionService.SupprimerCompetitionAsync(SelectedCompetition.Id);
 
             LoadCompetitions();
+        }
+        
+        [RelayCommand]
+        private void GoToHomePage()
+        {
+            _mainViewModel.CurrentPage = new HomePageViewModel(_mainViewModel);
+        }
+    
+        [RelayCommand]
+        private void GoToCompetitionPage()
+        {
+            _mainViewModel.CurrentPage = new CompetitionPageViewModel(_mainViewModel);
         }
     }
 }

@@ -3,24 +3,39 @@
              xmlns:vm="clr-namespace:chess_DB.ViewModels"
              x:DataType="vm:ConsultCompetitionPageViewModel"
              x:Class="chess_DB.Views.ConsultCompetitionPageView">
+    
+    <UserControl.Styles>
+        <StyleInclude Source="/Styles/AppDefaultStyle.axaml"></StyleInclude>
+    </UserControl.Styles>
 
-    <Grid ColumnDefinitions="2*,3*" Margin="20" ColumnSpacing="20">
-
-        <!-- ========================= -->
-        <!--   COLONNE 1 : LISTE      -->
-        <!-- ========================= -->
-        <StackPanel Grid.Column="0" Spacing="10">
-
-            <TextBlock Text="Liste des compétitions" FontSize="26"/>
-
+    <Grid RowDefinitions="Auto,*" Background="{DynamicResource PrimaryBackgroundGradient }">
+        <Border Grid.Row="0" Padding="1">
+            <Grid ColumnDefinitions="Auto,*">
+                <StackPanel Grid.Column="0" Orientation="Horizontal" >
+                    <Button  Classes="transparent" Height="50" Width="50" Command="{Binding GoToHomePageCommand}">
+                        <Label Classes="icon-only" Content="&#xE2C2;"></Label>
+                    </Button>
+                    <Button  Classes="transparent" Height="50" Width="50" Command="{Binding GoToCompetitionPageCommand}">
+                        <Label Classes="icon-only" Content="&#xE120;"></Label>
+                    </Button>
+                </StackPanel>
+                <TextBlock Grid.Column="1" TextAlignment="Center" Classes="title1">
+                </TextBlock>
+            </Grid>
+        </Border>
+        
+        <Grid Grid.Row="1" ColumnDefinitions="4*,*,6*" Margin="20" ColumnSpacing="20">
             <TextBox Watermark="Rechercher..." Text="{Binding SearchText}" />
-
-            <ListBox ItemsSource="{Binding CompetitionsFiltered}"
-                     SelectedItem="{Binding SelectedCompetition}">
+            
+            <!--   COLONNE 1 : LISTE      -->
+            
+            <ListBox Grid.Column="0" ItemsSource="{Binding CompetitionsFiltered}"
+                     SelectedItem="{Binding SelectedCompetition}"
+                     Classes="listPlayer">
                 
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <Border Background="#444" Padding="10" CornerRadius="6" Margin="0,5">
+                        <Border Background="#151E3E" Padding="10" CornerRadius="6" Margin="0,5">
                             <StackPanel>
                                 <TextBlock Text="{Binding Name}" FontSize="18"/>
                                 <TextBlock Text="{Binding Type}"/>
@@ -31,53 +46,49 @@
                 </ListBox.ItemTemplate>
                 
             </ListBox>
-
-        </StackPanel>
-
-
-        <!-- ========================= -->
-        <!--   COLONNE 2 : DÉTAILS     -->
-        <!-- ========================= -->
-        <StackPanel Grid.Column="1" Spacing="10">
-
-            <TextBlock Text="Détails de la compétition" FontSize="26"/>
-
-            <!-- 🔴 Affiché quand aucune compétiton est sélectionnée -->
+                
+                
             
 
-            <!-- 🟢 Détails complets -->
-            <StackPanel DataContext="{Binding SelectedCompetition}">
+            
+            <!--   COLONNE 2 : DÉTAILS     -->
+            <StackPanel Grid.Column="2" Spacing="10">
+
+                <TextBlock Text="Détails de la compétition" FontSize="26"/>
+
+                <!-- Affiché quand aucune compétiton est sélectionnée -->
                 
-                <TextBlock Text="{Binding Name}" FontSize="22" FontWeight="Bold"/>
 
-                <TextBlock Text="Type :" FontWeight="Bold"/>
-                <TextBlock Text="{Binding Type}"/>
+                <!--Détails -->
+                <StackPanel DataContext="{Binding SelectedCompetition}">
+                    
+                    <TextBlock Text="{Binding Name}" FontSize="22" FontWeight="Bold"/>
 
-                <TextBlock Text="Lieu :" FontWeight="Bold"/>
-                <TextBlock Text="{Binding Place}"/>
+                    <TextBlock Text="Type :" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Type}"/>
 
-                <TextBlock Text="Dates :" FontWeight="Bold"/>
-                <TextBlock Text="{Binding StartDate}"/>
-                <TextBlock Text="{Binding EndDate}"/>
+                    <TextBlock Text="Lieu :" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Place}"/>
 
-                <TextBlock Text="Cadence :" FontWeight="Bold"/>
-                <TextBlock Text="{Binding Cadence}"/>
+                    <TextBlock Text="Dates :" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding StartDate}"/>
+                    <TextBlock Text="{Binding EndDate}"/>
 
-                <TextBlock Text="Règle :" FontWeight="Bold"/>
-                <TextBlock Text="{Binding Rule}"/>
+                    <TextBlock Text="Cadence :" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Cadence}"/>
 
-                <TextBlock Text="Catégorie :" FontWeight="Bold"/>
-                <TextBlock Text="{Binding Category}"/>
+                    <TextBlock Text="Règle :" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Rule}"/>
 
-                <TextBlock Text="Capacité :" FontWeight="Bold"/>
-                <TextBlock Text="{Binding Capacity}"/>
+                    <TextBlock Text="Catégorie :" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Category}"/>
 
-                <TextBlock Text="Joueurs inscrits :" FontWeight="Bold"/>
-                
+                    <TextBlock Text="Capacité :" FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Capacity}"/>
+                </StackPanel>
 
             </StackPanel>
 
-        </StackPanel>
-
+        </Grid>
     </Grid>
 </UserControl>

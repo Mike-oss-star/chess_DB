@@ -25,7 +25,7 @@ public partial class CompetitionPageViewModel:ViewModelBase
     [RelayCommand]
     private void GoToConsultCompetitionPage()
     {
-        _mainViewModel.CurrentPage = new ConsultCompetitionPageViewModel(new CompetitionService());
+        _mainViewModel.CurrentPage = new ConsultCompetitionPageViewModel(_mainViewModel,new CompetitionService());
     }
 
     [RelayCommand]
@@ -43,6 +43,6 @@ public partial class CompetitionPageViewModel:ViewModelBase
     [RelayCommand]
     private void GoToRemoveCompetitionPage()
     {
-        _mainViewModel.CurrentPage = new RemoveCompetitionPageViewModel(new CompetitionService());
+        _mainViewModel.CurrentPage = new RemoveCompetitionPageViewModel(_mainViewModel,new CompetitionService());
     }
 }

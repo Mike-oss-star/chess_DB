@@ -48,12 +48,10 @@
         <Setter Property="Foreground" Value="{DynamicResource PrimaryButtonBackgroundGradient}"></Setter>
     </Style>
     
-    <Style Selector="TextBlock">
-        <Setter Property="TextAlignment" Value="Center"></Setter>
-    </Style>
     
     
     <Style Selector="TextBlock.homeText">
+        <Setter Property="TextAlignment" Value="Center"></Setter>
         <Setter Property="FontWeight" Value="Bold"></Setter>
         <Setter Property="FontSize" Value="18"></Setter>
         <Setter Property="FontStyle" Value="Italic"></Setter>

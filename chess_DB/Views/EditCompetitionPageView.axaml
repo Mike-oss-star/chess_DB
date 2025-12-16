@@ -4,41 +4,65 @@
              x:DataType="vm:EditCompetitionPageViewModel"
              x:Class="chess_DB.Views.EditCompetitionPageView">
 
-    <Grid ColumnDefinitions="2*,3*" Margin="20">
+    <UserControl.Styles>
+        <StyleInclude Source="/Styles/AppDefaultStyle.axaml"></StyleInclude>
+    </UserControl.Styles>
+    
+    <Grid RowDefinitions="Auto,*" Background="{DynamicResource PrimaryBackgroundGradient }">
+        
+        <Border Grid.Row="0" Padding="1">
+            <Grid ColumnDefinitions="Auto,*">
+                <StackPanel Grid.Column="0" Orientation="Horizontal" >
+                    <Button  Classes="transparent" Height="50" Width="50" Command="{Binding GoToHomePageCommand}">
+                        <Label Classes="icon-only" Content="&#xE2C2;"></Label>
+                    </Button>
+                    <Button  Classes="transparent" Height="50" Width="50" Command="{Binding GoToCompetitionPageCommand}">
+                        <Label Classes="icon-only" Content="&#xE120;"></Label>
+                    </Button>
+                </StackPanel>
+                <TextBlock Grid.Column="1" TextAlignment="Center" Classes="title1">
+                    Edit Competition
+                </TextBlock>
+            </Grid>
+        </Border>
+    
+        <Grid Grid.Row="1" ColumnDefinitions="4*,*,6*" Margin="20">
 
-        <!-- Liste des compétitions -->
-        <ListBox Grid.Column="0"
-                 ItemsSource="{Binding Competitions}"
-                 SelectedItem="{Binding SelectedCompetition}">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding Name}" />
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+            <!-- Liste des compétitions -->
+            <ListBox Grid.Column="0"
+                     ItemsSource="{Binding Competitions}"
+                     SelectedItem="{Binding SelectedCompetition}"
+                     Classes="listPlayer">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}" HorizontalAlignment="Left" />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
 
-        <!-- Formulaire -->
-        <StackPanel Grid.Column="1" Margin="20"
-                    Spacing="10">
+            <!-- Formulaire -->
+            <StackPanel Grid.Column="2" Margin="20"
+                        Spacing="10">
 
-            <TextBlock Text="Modifier la compétition" FontSize="20"/>
+                <TextBlock Text="Modifier la compétition" FontSize="20"/>
 
-            <TextBox Watermark="Type" Text="{Binding Type}" />
-            <TextBox Watermark="Nom" Text="{Binding Name}" />
-            <TextBox Watermark="Lieu" Text="{Binding Place}" />
+                <TextBox Watermark="Type" Text="{Binding Type}" />
+                <TextBox Watermark="Nom" Text="{Binding Name}" />
+                <TextBox Watermark="Lieu" Text="{Binding Place}" />
 
-            <DatePicker SelectedDate="{Binding StartDate}" />
-            <DatePicker SelectedDate="{Binding EndDate}" />
+                <DatePicker SelectedDate="{Binding StartDate}" />
+                <DatePicker SelectedDate="{Binding EndDate}" />
 
-            <TextBox Watermark="Système" Text="{Binding System}" />
-            <TextBox Watermark="Cadence" Text="{Binding Cadence}" />
-            <TextBox Watermark="Règle" Text="{Binding Rule}" />
-            <TextBox Watermark="Catégorie" Text="{Binding Category}" />
-            <TextBox Watermark="Capacité"
-                     Text="{Binding Capacity}" />
+                <TextBox Watermark="Système" Text="{Binding System}" />
+                <TextBox Watermark="Cadence" Text="{Binding Cadence}" />
+                <TextBox Watermark="Règle" Text="{Binding Rule}" />
+                <TextBox Watermark="Catégorie" Text="{Binding Category}" />
+                <TextBox Watermark="Capacité"
+                         Text="{Binding Capacity}" />
 
-            <Button Content="Enregistrer"
-                    Command="{Binding SaveCommand}" />
-        </StackPanel>
+                <Button Content="Enregistrer"
+                        Command="{Binding SaveCommand}" />
+            </StackPanel>
+        </Grid>
     </Grid>
 </UserControl>

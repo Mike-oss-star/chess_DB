@@ -59,7 +59,7 @@ public partial class EditPlayerPageViewModel : ViewModelBase
         }
     }
 
-    // 🔵 Commande pour rechercher un joueur par ID
+    //  Commande pour rechercher un joueur par ID
     [RelayCommand]
     private async Task SearchByIdAsync()
     {
@@ -77,7 +77,7 @@ public partial class EditPlayerPageViewModel : ViewModelBase
         }
     }
 
-    // 🔵 Commande pour réinitialiser la recherche
+    //  Commande pour réinitialiser la recherche
     [RelayCommand]
     private void ResetSearch()
     {

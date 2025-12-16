@@ -4,12 +4,14 @@ using System.Linq;
 using chess_DB.Models;
 using chess_DB.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace chess_DB.ViewModels
 {
     public partial class ConsultCompetitionPageViewModel : ViewModelBase
     {
         private readonly CompetitionService _competitionService;
+        private readonly MainViewModel _mainViewModel;
 
         public ObservableCollection<Competition> Competitions { get; } = new();
         public ObservableCollection<Competition> CompetitionsFiltered { get; } = new();
@@ -20,8 +22,11 @@ namespace chess_DB.ViewModels
         [ObservableProperty]
         private Competition? selectedCompetition;
 
-        public ConsultCompetitionPageViewModel(CompetitionService competitionService)
+        
+
+        public ConsultCompetitionPageViewModel(MainViewModel mainViewModel,CompetitionService competitionService)
         {
+            _mainViewModel = mainViewModel;
             _competitionService = competitionService;
             LoadCompetitions();
         }
@@ -55,5 +60,19 @@ namespace chess_DB.ViewModels
             foreach (var c in filtered)
                 CompetitionsFiltered.Add(c);
         }
+        
+        [RelayCommand]
+        private void GoToHomePage()
+        {
+            _mainViewModel.CurrentPage = new HomePageViewModel(_mainViewModel);
+        }
+    
+        [RelayCommand]
+        private void GoToCompetitionPage()
+        {
+            _mainViewModel.CurrentPage = new CompetitionPageViewModel(_mainViewModel);
+        }
     }
+    
+    
 }

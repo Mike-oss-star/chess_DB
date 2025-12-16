@@ -89,5 +89,16 @@ namespace chess_DB.ViewModels
             LoadCompetitions();
         }
         
+        [RelayCommand]
+        private void GoToHomePage()
+        {
+            _mainViewModel.CurrentPage = new HomePageViewModel(_mainViewModel);
+        }
+    
+        [RelayCommand]
+        private void GoToCompetitionPage()
+        {
+            _mainViewModel.CurrentPage = new CompetitionPageViewModel(_mainViewModel);
+        }
     }
 }

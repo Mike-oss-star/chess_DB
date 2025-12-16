@@ -14,9 +14,14 @@
     <Grid RowDefinitions="Auto,*" Background="{DynamicResource PrimaryBackgroundGradient}">
         <Border Grid.Row="0" Padding="1">
             <Grid ColumnDefinitions="Auto,*">
-                <Button Grid.Column="0" Classes="transparent" Height="50" Width="50" Command="{Binding GoToHomePageCommand}">
-                    <Label Classes="icon-only" Content="&#xE2C2;"></Label>
-                </Button>
+                <StackPanel Grid.Column="0" Orientation="Horizontal" >
+                    <Button  Classes="transparent" Height="50" Width="50" Command="{Binding GoToHomePageCommand}">
+                        <Label Classes="icon-only" Content="&#xE2C2;"></Label>
+                    </Button>
+                    <Button  Classes="transparent" Height="50" Width="50" Command="{Binding GoToPlayerPageCommand}">
+                        <Label Classes="icon-only" Content="&#xE120;"></Label>
+                    </Button>
+                </StackPanel>
                 <TextBlock Grid.Column="1" TextAlignment="Center" Classes="title1">
                     Add New Player
                 </TextBlock>

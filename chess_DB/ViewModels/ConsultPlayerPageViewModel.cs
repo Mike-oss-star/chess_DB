@@ -1,73 +1,47 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
 using chess_DB.Models;
 using chess_DB.Services;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
-using System;
+using CommunityToolkit.Mvvm.Input;
 
 namespace chess_DB.ViewModels;
 
 public partial class ConsultPlayerPageViewModel : ViewModelBase
 {
-    private readonly MainViewModel _mainViewModel;
-    private readonly PlayerService _playerService;
+    
+    private readonly PlayerService _playerService = new();
 
-    // 🔹 Liste observable → bindable dans XAML
     public ObservableCollection<Player> Players { get; } = new();
+
+    [ObservableProperty]
+    private Player? selectedPlayer;
+
+    
+    private readonly MainViewModel _mainViewModel;
 
     public ConsultPlayerPageViewModel(MainViewModel mainViewModel)
     {
         _mainViewModel = mainViewModel;
-        _playerService = new PlayerService();
-
-        // 🔄 Chargement automatique
-        _ = LoadPlayersAsync();
+        LoadAsync();
     }
 
-    // 🟦 Charger tous les joueurs
-    [RelayCommand]
-    public async Task LoadPlayersAsync()
+    private async Task LoadAsync()
     {
-        Players.Clear();
-
         var players = await _playerService.ObtenirTousLesJoueursAsync();
-
-        foreach (var p in players)
-            Players.Add(p);
+        Players.Clear();
+        players.ForEach(p => Players.Add(p));
     }
-
-    // 🟢 Bouton : Retour à l'accueil
+    
     [RelayCommand]
     private void GoToHomePage()
     {
         _mainViewModel.CurrentPage = new HomePageViewModel(_mainViewModel);
     }
-
-    // 🟠 Bouton : Aller à "Ajouter un joueur"
-    [RelayCommand]
-    private void GoToAddPlayerPage()
-    {
-        _mainViewModel.CurrentPage = new AddPlayerPageViewModel(_mainViewModel);
-    }
-
-    // 🔴 Supprimer un joueur
-    [RelayCommand]
-    private async Task DeletePlayerAsync(Player? player)
-    {
-        if (player is null)
-            return;
-
-        bool ok = await _playerService.SupprimerJoueurAsync(player.Id);
-
-        if (!ok)
-        {
-            Console.WriteLine("❌ Erreur suppression.");
-            return;
-        }
-
-        Players.Remove(player);  // Mise à jour UI
-    }
     
-    
+    [RelayCommand]
+    private void GoToPlayerPage()
+    {
+        _mainViewModel.CurrentPage = new PlayerPageViewModel(_mainViewModel);
+    }
 }

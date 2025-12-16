@@ -8,37 +8,63 @@
              mc:Ignorable="d">
     
     <Design.DataContext><vm:RemovePlayerPageViewModel></vm:RemovePlayerPageViewModel></Design.DataContext>
+    
+    <UserControl.Styles>
+        <StyleInclude Source="/Styles/AppDefaultStyle.axaml"></StyleInclude>
+    </UserControl.Styles>
 
-    <StackPanel Margin="20" Spacing="10">
+    <Grid RowDefinitions="Auto,*" Background="{DynamicResource PrimaryBackgroundGradient }">
+        
+        <Border Grid.Row="0" Padding="1">
+            <Grid ColumnDefinitions="Auto,*">
+                <StackPanel Grid.Column="0" Orientation="Horizontal" >
+                    <Button  Classes="transparent" Height="50" Width="50" Command="{Binding GoToHomePageCommand}">
+                        <Label Classes="icon-only" Content="&#xE2C2;"></Label>
+                    </Button>
+                    <Button  Classes="transparent" Height="50" Width="50" Command="{Binding GoToPlayerPageCommand}">
+                        <Label Classes="icon-only" Content="&#xE120;"></Label>
+                    </Button>
+                </StackPanel>
+                <TextBlock Grid.Column="1" TextAlignment="Center" Classes="title1">
+                    Remove Player
+                </TextBlock>
+            </Grid>
+        </Border>
+            
+        <Grid Grid.Row="1"  Margin="20">
+            <StackPanel Margin="20" Spacing="10">
 
-        <TextBlock Text="Supprimer un joueur" FontSize="22" />
+                
 
-        <!-- Barre de recherche -->
-        <StackPanel Orientation="Horizontal" Spacing="5">
-            <TextBox Width="200" Watermark="Entrer l'ID"
-                     Text="{Binding SearchId, Mode=TwoWay}" />
-            <Button Content="Rechercher" Command="{Binding SearchByIdCommand}" />
-            <Button Content="Réinitialiser" Command="{Binding ResetSearchCommand}" />
-        </StackPanel>
+                <!-- Barre de recherche -->
+                <StackPanel Orientation="Horizontal" Spacing="5">
+                    <TextBox Width="200" Watermark="Entrer l'ID"
+                             Text="{Binding SearchId, Mode=TwoWay}" />
+                    <Button Content="Rechercher" Command="{Binding SearchByIdCommand}" />
+                    <Button Content="Réinitialiser" Command="{Binding ResetSearchCommand}" />
+                </StackPanel>
 
-        <!-- Liste des joueurs -->
-        <ListBox ItemsSource="{Binding Players}"
-                 SelectedItem="{Binding SelectedPlayer}"
-                 Height="200">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal" Spacing="5">
-                        <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
-                        <TextBlock Text="{Binding Surname}" FontSize="12" Foreground="Gray"/>
-                        <TextBlock Text="{Binding Id}" FontSize="10" Foreground="DarkGray"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+                <!-- Liste des joueurs -->
+                <ListBox ItemsSource="{Binding Players}"
+                         SelectedItem="{Binding SelectedPlayer}"
+                         Height="400"
+                         Classes="listPlayer">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Spacing="5">
+                                <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Surname}" FontSize="12" Foreground="Gray"/>
+                                <TextBlock Text="{Binding Id}" FontSize="10" Foreground="DarkGray"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
 
-        <!-- Bouton supprimer -->
-        <Button Content="Supprimer le joueur sélectionné"
-                Command="{Binding RemoveCommand}"
-                Width="220" HorizontalAlignment="Left"/>
-    </StackPanel>
+                <!-- Bouton supprimer -->
+                <Button Content="Delete selected Player "
+                        Command="{Binding RemoveCommand}"
+                        Width="250" HorizontalAlignment="Left"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
 </UserControl>

@@ -73,11 +73,23 @@ public partial class RemovePlayerPageViewModel : ViewModelBase
         }
     }
 
-    // 🔵 Commande réinitialiser la recherche
+    //  Commande réinitialiser la recherche
     [RelayCommand]
     private void ResetSearch()
     {
         SearchId = "";
         LoadPlayers();
+    }
+    
+    [RelayCommand]
+    private void GoToHomePage()
+    {
+        _mainViewModel.CurrentPage = new HomePageViewModel(_mainViewModel);
+    }
+    
+    [RelayCommand]
+    private void GoToPlayerPage()
+    {
+        _mainViewModel.CurrentPage = new PlayerPageViewModel(_mainViewModel);
     }
 }

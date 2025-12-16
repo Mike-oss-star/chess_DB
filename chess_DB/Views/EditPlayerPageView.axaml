@@ -13,11 +13,23 @@
     
     <Grid RowDefinitions="Auto,*" Background="{DynamicResource PrimaryBackgroundGradient }">
         
-            <Grid>
-                <TextBlock Text="Modifier un joueur" FontSize="22" />
+        <Border Grid.Row="0" Padding="1">
+            <Grid ColumnDefinitions="Auto,*">
+                <StackPanel Grid.Column="0" Orientation="Horizontal" >
+                    <Button  Classes="transparent" Height="50" Width="50" Command="{Binding GoToHomePageCommand}">
+                        <Label Classes="icon-only" Content="&#xE2C2;"></Label>
+                    </Button>
+                    <Button  Classes="transparent" Height="50" Width="50" Command="{Binding GoToPlayerPageCommand}">
+                        <Label Classes="icon-only" Content="&#xE120;"></Label>
+                    </Button>
+                </StackPanel>
+                <TextBlock Grid.Column="1" TextAlignment="Center" Classes="title1">
+                    Edit Player
+                </TextBlock>
             </Grid>
+        </Border>
             
-            <Grid Grid.Row="1" ColumnDefinitions="*,*" Margin="20">
+            <Grid Grid.Row="1" ColumnDefinitions="4*,*,6*" Margin="20">
                 <Grid>
                     <!-- Barre de recherche -->
                     <StackPanel Spacing="20">
@@ -46,30 +58,41 @@
                     
                 </Grid>
                 
-                <Grid Grid.Column="1">
+                <Grid Grid.Column="2">
                     <!-- Formulaire d'édition -->
-                    <StackPanel Margin="0,10,0,10" Spacing="5">
-                        <TextBlock>Name</TextBlock>
-                        <TextBox Watermark="Nom" Text="{Binding SelectedPlayer.Name, Mode=TwoWay}" />
-                        
-                        <TextBlock>Surname</TextBlock>
-                        <TextBox Watermark="Prénom" Text="{Binding SelectedPlayer.Surname, Mode=TwoWay}" />
-                        
-                        <TextBlock>Birthdate</TextBlock>
-                        <DatePicker SelectedDate="{Binding SelectedPlayer.Birthdate, Mode=TwoWay}" />
-                        
-                        <TextBlock>Email</TextBlock>
-                        <TextBox Watermark="Email" Text="{Binding SelectedPlayer.Email, Mode=TwoWay}" />
-                        
-                        <TextBlock>Phone</TextBlock>
-                        <TextBox Watermark="Téléphone" Text="{Binding SelectedPlayer.Phone, Mode=TwoWay}" />
-                        
-                        <TextBlock>Country</TextBlock>
-                        <TextBox Watermark="Pays" Text="{Binding SelectedPlayer.Country, Mode=TwoWay}" />
-                        
-                        <Button Content="Sauvegarder" Command="{Binding SaveCommand}" Width="120" />
-                        
-                    </StackPanel>
+                    <ScrollViewer VerticalScrollBarVisibility="Visible">
+                        <StackPanel Margin="0,10,0,10" Spacing="5">
+                            <TextBlock HorizontalAlignment="Left">Name</TextBlock>
+                            <TextBox Watermark="Nom" Text="{Binding SelectedPlayer.Name, Mode=TwoWay}" />
+                            
+                            <TextBlock HorizontalAlignment="Left">Surname</TextBlock>
+                            <TextBox Watermark="Prénom" Text="{Binding SelectedPlayer.Surname, Mode=TwoWay}" />
+                            
+                            <TextBlock HorizontalAlignment="Left">Birthdate</TextBlock>
+                            <DatePicker SelectedDate="{Binding SelectedPlayer.Birthdate, Mode=TwoWay}" />
+                            
+                            <TextBlock HorizontalAlignment="Left">Email</TextBlock>
+                            <TextBox Watermark="Email" Text="{Binding SelectedPlayer.Email, Mode=TwoWay}" />
+                            
+                            <TextBlock HorizontalAlignment="Left">Phone</TextBlock>
+                            <TextBox Watermark="Téléphone" Text="{Binding SelectedPlayer.Phone, Mode=TwoWay}" />
+                            
+                            <TextBlock HorizontalAlignment="Left">Country</TextBlock>
+                            <TextBox Watermark="Pays" Text="{Binding SelectedPlayer.Country, Mode=TwoWay}" />
+                            
+                            <TextBlock HorizontalAlignment="Left">City</TextBlock>
+                            <TextBox Watermark="Pays" Text="{Binding SelectedPlayer.City, Mode=TwoWay}" />
+                            
+                            <TextBlock HorizontalAlignment="Left">Street</TextBlock>
+                            <TextBox Watermark="Pays" Text="{Binding SelectedPlayer.Street, Mode=TwoWay}" />
+                            
+                            <TextBlock HorizontalAlignment="Left">Postal Code</TextBlock>
+                            <TextBox Watermark="Pays" Text="{Binding SelectedPlayer.PostalCode, Mode=TwoWay}" />
+                            
+                            <Button Content="Sauvegarder" Command="{Binding SaveCommand}" Width="120" />
+                            
+                        </StackPanel>
+                    </ScrollViewer>
                     
                 </Grid>
                 

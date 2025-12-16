@@ -39,7 +39,7 @@ public partial class AddPlayerPageViewModel : ViewModelBase
     [ObservableProperty] private string street = "";
     [ObservableProperty] private string postalCode = "";
 
-    // 🔵 Commande : Retour à l'accueil
+    //  Commande : Retour à l'accueil
     [RelayCommand]
     private void GoToHomePage()
     {
@@ -80,6 +80,12 @@ public partial class AddPlayerPageViewModel : ViewModelBase
 
         // Ou retour à l'accueil :
         _mainViewModel.CurrentPage = new HomePageViewModel(_mainViewModel);
+    }
+    
+    [RelayCommand]
+    private void GoToPlayerPage()
+    {
+        _mainViewModel.CurrentPage = new PlayerPageViewModel(_mainViewModel);
     }
     
 }

@@ -11,7 +11,9 @@ namespace chess_DB.ViewModels;
 
 public partial class EditPlayerPageViewModel : ViewModelBase
 {
+    
     private readonly MainViewModel _mainViewModel;
+    
     private readonly PlayerService _playerService;
 
     // Liste de tous les joueurs
@@ -81,5 +83,17 @@ public partial class EditPlayerPageViewModel : ViewModelBase
     {
         SearchId = "";
         LoadPlayers();
+    }
+    
+    [RelayCommand]
+    private void GoToHomePage()
+    {
+        _mainViewModel.CurrentPage = new HomePageViewModel(_mainViewModel);
+    }
+    
+    [RelayCommand]
+    private void GoToPlayerPage()
+    {
+        _mainViewModel.CurrentPage = new PlayerPageViewModel(_mainViewModel);
     }
 }

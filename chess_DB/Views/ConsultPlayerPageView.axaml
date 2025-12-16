@@ -10,30 +10,123 @@
         <StyleInclude Source="/Styles/AppDefaultStyle.axaml"></StyleInclude>
     </UserControl.Styles>
     <Grid RowDefinitions="Auto,*" Background="{DynamicResource PrimaryBackgroundGradient }">
-        <Grid Grid.Row="0" Height="50">
-            <TextBlock> Player List</TextBlock>
-        </Grid>
-        <Grid Grid.Row="1" ColumnDefinitions="*,Auto">
-            <Grid Margin="50 0 50 50" >
-                <ListBox ItemsSource="{Binding Players}" Classes="listPlayer">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal" Margin="5">
-                                <TextBlock Text="{Binding Name}" />
-                                <TextBlock Text="{Binding Surname}" />
-                                <TextBlock Text="{Binding Email}" FontSize="12" />
-                                <Separator/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
+        <Border Grid.Row="0" Padding="1">
+            <Grid ColumnDefinitions="Auto,*">
+                <StackPanel Grid.Column="0" Orientation="Horizontal" >
+                    <Button  Classes="transparent" Height="50" Width="50" Command="{Binding GoToHomePageCommand}">
+                        <Label Classes="icon-only" Content="&#xE2C2;"></Label>
+                    </Button>
+                    <Button  Classes="transparent" Height="50" Width="50" Command="{Binding GoToPlayerPageCommand}">
+                        <Label Classes="icon-only" Content="&#xE120;"></Label>
+                    </Button>
+                </StackPanel>
+                <TextBlock Grid.Column="1" TextAlignment="Center" Classes="title1">
+                    Player List
+                </TextBlock>
             </Grid>
-            <StackPanel Grid.Column="1" Width="124">
-                <Button Content="Add" ></Button>
-                <Button Content="Edit"></Button>
-                <Button Content="Delete"></Button>
+        </Border>
+        <Grid Grid.Row="1" ColumnDefinitions="4*,*,6*" Margin="10">
+
+    <!-- Liste joueurs -->
+    <StackPanel>
+        <TextBlock Text="Joueurs"
+                   FontSize="16"
+                   Margin="0,0,0,10"/>
+
+        <ListBox ItemsSource="{Binding Players}"
+                 SelectedItem="{Binding SelectedPlayer}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"
+                               Margin="4"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </StackPanel>
+
+    <Border Grid.Column="1"
+            Background="Gray"
+            Width="2"/>
+
+    <!-- Détails joueur -->
+    <ScrollViewer Grid.Column="2">
+        <StackPanel Margin="10"
+                    Spacing="6"
+                    HorizontalAlignment="Left">
+
+            <TextBlock Text="Player Informations "
+                       FontSize="18"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Left"/>
+            
+            <StackPanel Margin="10">
+                <TextBlock Text="ID" HorizontalAlignment="Left" FontWeight="Bold"/>
+                <TextBlock Text="{Binding SelectedPlayer.Id}" HorizontalAlignment="Left"/>
             </StackPanel>
-        </Grid>
+            
+            <StackPanel Margin="10">
+                <TextBlock Text="Name" HorizontalAlignment="Left" FontWeight="Bold"/>
+                <TextBlock Text="{Binding SelectedPlayer.Name}" HorizontalAlignment="Left"/>
+            </StackPanel>
+            
+            <StackPanel Margin="10">
+                <TextBlock Text="Surname" HorizontalAlignment="Left" FontWeight="Bold"/>
+                <TextBlock Text="{Binding SelectedPlayer.Surname}" HorizontalAlignment="Left"/>
+            </StackPanel>
+            
+            <StackPanel Margin="10">
+                <TextBlock Text="Gender" HorizontalAlignment="Left" FontWeight="Bold"/>
+                <TextBlock Text="{Binding SelectedPlayer.Gender}" HorizontalAlignment="Left"/>
+            </StackPanel>
+            
+            <StackPanel Margin="10">
+                <TextBlock Text="Birthdate" HorizontalAlignment="Left" FontWeight="Bold"/>
+                <TextBlock Text="{Binding SelectedPlayer.Birthdate,
+                              StringFormat=' {0:dd/MM/yyyy}'}" HorizontalAlignment="Left"/>
+            </StackPanel>    
+            
+            <StackPanel Margin="10">
+                <TextBlock Text="Email" HorizontalAlignment="Left" FontWeight="Bold"/>
+                <TextBlock Text="{Binding SelectedPlayer.Email}" HorizontalAlignment="Left"/>
+            </StackPanel>
+            
+            <StackPanel Margin="10">
+                <TextBlock Text="Phone" HorizontalAlignment="Left" FontWeight="Bold"/>
+                <TextBlock Text="{Binding SelectedPlayer.Phone}" HorizontalAlignment="Left"/>
+            </StackPanel>
+
+            <StackPanel Margin="10">
+                <TextBlock Text="Country" HorizontalAlignment="Left" FontWeight="Bold"/>
+                <TextBlock Text="{Binding SelectedPlayer.Country}" HorizontalAlignment="Left"/>
+            </StackPanel>
+
+            <StackPanel Margin="10">
+                <TextBlock Text="City" HorizontalAlignment="Left" FontWeight="Bold"/>
+                <TextBlock Text="{Binding SelectedPlayer.City}" HorizontalAlignment="Left"/>
+            </StackPanel>
+
+            <StackPanel Margin="10">
+                <TextBlock Text="Street" HorizontalAlignment="Left" FontWeight="Bold"/>
+                <TextBlock Text="{Binding SelectedPlayer.Street}" HorizontalAlignment="Left"/>
+            </StackPanel>
+
+            <StackPanel Margin="10">
+                <TextBlock Text="Postal Code" HorizontalAlignment="Left" FontWeight="Bold"/>
+                <TextBlock Text="{Binding SelectedPlayer.PostalCode}" HorizontalAlignment="Left"/>
+            </StackPanel>
+
+            <StackPanel Margin="10">
+                <TextBlock Text="Elo" HorizontalAlignment="Left" FontWeight="Bold"/>
+                <TextBlock Text="{Binding SelectedPlayer.Elo}"
+                           FontWeight="Bold"
+                           Margin="0,10,0,0" 
+                           HorizontalAlignment="Left"/>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+
+</Grid>
+
         
     </Grid>
     

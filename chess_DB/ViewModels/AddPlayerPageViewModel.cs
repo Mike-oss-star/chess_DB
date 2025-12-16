@@ -64,7 +64,14 @@ public partial class AddPlayerPageViewModel : ViewModelBase
             Street = Street,
             PostalCode = PostalCode
         };
-
+        
+        if (Name == "" ||
+            Surname == "" ||
+            Gender == "" ||
+            Birthdate == null ||
+            Country == "")
+            return;
+        
         bool ok = await _playerService.AjouterJoueurAsync(newPlayer);
 
         if (!ok)

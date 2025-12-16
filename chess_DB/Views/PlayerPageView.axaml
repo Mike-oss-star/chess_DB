@@ -59,14 +59,6 @@
                         </StackPanel>
                     </Button>
                     
-                    <Button Classes="home" Click="GoToHomePage">
-                        <StackPanel>
-                            <Label Classes="icon" Content="&#xE7E6;"></Label>
-                            <TextBlock Classes="homeText">
-                                Go Back
-                            </TextBlock>    
-                        </StackPanel>
-                    </Button>
                     
                 </StackPanel>
                 <Grid Grid.Column="2" Width="50"></Grid>

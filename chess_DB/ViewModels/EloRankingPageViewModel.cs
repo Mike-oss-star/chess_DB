@@ -4,6 +4,7 @@ using System.Linq;
 using chess_DB.Models;
 using chess_DB.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace chess_DB.ViewModels;
 
@@ -11,11 +12,13 @@ public partial class EloRankingPageViewModel : ViewModelBase
 {
     private readonly PlayerService _playerService;
     private readonly GameService _gameService;
+    private readonly MainViewModel _mainViewModel;
 
     public ObservableCollection<PlayerRankingItem> Rankings { get; } = new();
 
-    public EloRankingPageViewModel()
+    public EloRankingPageViewModel(MainViewModel mainViewModel)
     {
+        _mainViewModel = mainViewModel;
         _playerService = new PlayerService();
         _gameService = new GameService();
 
@@ -68,6 +71,12 @@ public partial class EloRankingPageViewModel : ViewModelBase
             ordered[i].Rank = i + 1;
             Rankings.Add(ordered[i]);
         }
+    }
+    
+    [RelayCommand]
+    private void GoToHomePage()
+    {
+        _mainViewModel.CurrentPage = new HomePageViewModel(_mainViewModel);
     }
 
 }

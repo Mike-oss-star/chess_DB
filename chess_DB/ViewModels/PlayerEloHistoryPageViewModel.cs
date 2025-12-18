@@ -4,6 +4,7 @@ using System.Linq;
 using chess_DB.Models;
 using chess_DB.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace chess_DB.ViewModels;
 
@@ -11,14 +12,16 @@ public partial class PlayerEloHistoryPageViewModel : ViewModelBase
 {
     private readonly PlayerService _playerService;
     private readonly GameService _gameService;
+    private readonly MainViewModel _mainViewModel;
 
     public ObservableCollection<Player> Players { get; } = new();
     public ObservableCollection<EloHistoryItem> EloHistory { get; } = new();
 
     [ObservableProperty] private Player? selectedPlayer;
 
-    public PlayerEloHistoryPageViewModel()
+    public PlayerEloHistoryPageViewModel(MainViewModel mainViewModel)
     {
+        _mainViewModel = mainViewModel;
         _playerService = new PlayerService();
         _gameService = new GameService();
 
@@ -91,5 +94,11 @@ public partial class PlayerEloHistoryPageViewModel : ViewModelBase
     {
         var opponentId = isWhite ? game.BlackPlayerId : game.WhitePlayerId;
         return Players.FirstOrDefault(p => p.Id == opponentId)?.Name ?? "Inconnu";
+    }
+    
+    [RelayCommand]
+    private void GoToHomePage()
+    {
+        _mainViewModel.CurrentPage = new HomePageViewModel(_mainViewModel);
     }
 }

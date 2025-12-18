@@ -7,13 +7,28 @@
              x:DataType="vm:EloRankingPageViewModel"
              x:Class="chess_DB.Views.EloRankingPageView">
     
-    <StackPanel Margin="20">
-        <TextBlock Text="🏆 Classement Elo"
-                   FontSize="22"
-                   FontWeight="Bold"
-                   Margin="0,0,0,15"/>
-
-        <ListBox ItemsSource="{Binding Rankings}">
+    <UserControl.Styles>
+        <StyleInclude Source="/Styles/AppDefaultStyle.axaml"></StyleInclude>
+    </UserControl.Styles>
+    
+    
+    
+    <Grid RowDefinitions="Auto,*" Background="{DynamicResource PrimaryBackgroundGradient }">
+        
+        <Border Grid.Row="0" Padding="1">
+            <Grid ColumnDefinitions="Auto,*">
+                <StackPanel Grid.Column="0" Orientation="Horizontal" >
+                    <Button  Classes="transparent" Height="50" Width="50" Command="{Binding GoToHomePageCommand}">
+                        <Label Classes="icon-only" Content="&#xE2C2;"></Label>
+                    </Button>
+                </StackPanel>
+                <TextBlock Grid.Column="1" TextAlignment="Center" Classes="title1">
+                    Elo Ranking
+                </TextBlock>
+            </Grid>
+        </Border>
+        <Grid Grid.Row="1">
+        <ListBox ItemsSource="{Binding Rankings}" Classes="listPlayer">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Border BorderThickness="1"
@@ -54,7 +69,8 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-
-    </StackPanel>
+    </Grid>
+    </Grid>
+    
 
 </UserControl>

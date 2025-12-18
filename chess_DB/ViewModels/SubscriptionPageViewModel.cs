@@ -12,6 +12,7 @@ public partial class SubscriptionPageViewModel : ViewModelBase
 {
     private readonly CompetitionService _competitionService = new();
     private readonly PlayerService _playerService = new();
+    private readonly MainViewModel _mainViewModel;
 
     public ObservableCollection<Competition> Competitions { get; } = new();
     public ObservableCollection<PlayerSelectable> Players { get; } = new();
@@ -19,8 +20,9 @@ public partial class SubscriptionPageViewModel : ViewModelBase
     [ObservableProperty]
     private Competition? selectedCompetition;
 
-    public SubscriptionPageViewModel()
+    public SubscriptionPageViewModel(MainViewModel mainViewModel)
     {
+        _mainViewModel = mainViewModel;
         LoadAsync();
     }
 
@@ -59,5 +61,11 @@ public partial class SubscriptionPageViewModel : ViewModelBase
         SelectedCompetition.JoueursIds = selectedPlayers;
 
         await _competitionService.ModifierCompetitionAsync(SelectedCompetition);
+    }
+
+    [RelayCommand]
+    private void GoToHomePage()
+    {
+        _mainViewModel.CurrentPage = new HomePageViewModel(_mainViewModel);
     }
 }

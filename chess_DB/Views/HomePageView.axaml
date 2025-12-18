@@ -75,10 +75,10 @@
                     
                     <Button Classes="home" Command="{Binding GoToHistoryPageCommand}">
                         <StackPanel>
-                            <Label Classes="icon" Content="&#xE3E8;"></Label>
+                            <Label Classes="icon" Content="&#xED0C;"></Label>
                             <TextBlock Classes="homeText">
-                                Functionality<LineBreak/>
-                                (We don't Know)
+                                Player Elo<LineBreak/>
+                                History
                             </TextBlock>
                         </StackPanel>
                     </Button>

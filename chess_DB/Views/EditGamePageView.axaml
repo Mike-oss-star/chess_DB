@@ -6,7 +6,30 @@
              x:Class="chess_DB.Views.EditGamePageView"
              xmlns:vm="clr-namespace:chess_DB.ViewModels"
              x:DataType="vm:EditGamePageViewModel">
-    <Grid ColumnDefinitions="250,10,*" RowDefinitions="Auto,*">
+    <UserControl.Styles>
+        <StyleInclude Source="/Styles/AppDefaultStyle.axaml"></StyleInclude>
+    </UserControl.Styles>
+    
+    <Grid RowDefinitions="Auto,*" Background="{DynamicResource PrimaryBackgroundGradient }">
+        
+        <Border Grid.Row="0" Padding="1">
+            <Grid ColumnDefinitions="Auto,*">
+                <StackPanel Grid.Column="0" Orientation="Horizontal" >
+                    <Button  Classes="transparent" Height="50" Width="50" Command="{Binding GoToHomePageCommand}">
+                        <Label Classes="icon-only" Content="&#xE2C2;"></Label>
+                    </Button>
+                    <Button  Classes="transparent" Height="50" Width="50" Command="{Binding GoToGamePageCommand}">
+                        <Label Classes="icon-only" Content="&#xE120;"></Label>
+                    </Button>
+                </StackPanel>
+                <TextBlock Grid.Column="1" TextAlignment="Center" Classes="title1">
+                    Edit Game
+                </TextBlock>
+            </Grid>
+        </Border>
+    
+    
+    <Grid Grid.Row="1" ColumnDefinitions="250,10,*" RowDefinitions="Auto,*">
         
         <!-- Liste des compétitions et des parties -->
         <StackPanel Grid.Column="0" Grid.Row="0" Margin="10">
@@ -24,7 +47,8 @@
             <TextBlock Text="Parties:" FontSize="16" Margin="0,10,0,0"/>
             <ListBox ItemsSource="{Binding Games}"
                      SelectedItem="{Binding SelectedGame}"
-                     Height="500">
+                     Height="500"
+                     Classes="listPlayer">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal" Spacing="12">
@@ -52,5 +76,6 @@
         <Button Content="Enregistrer" Command="{Binding SaveCommand}" Margin="0,10,0,0"/>
     </StackPanel>
 </Grid>
+        </Grid>
 
 </UserControl>

@@ -15,6 +15,7 @@ public partial class AddGamePageViewModel : ViewModelBase
     private readonly GameService _gameService;
     private readonly PlayerService _playerService;
     private readonly CompetitionService _competitionService;
+    private readonly MainViewModel _mainViewModel;
 
     // 🔵 Toutes les données
     private List<Player> _allPlayers = new();
@@ -40,8 +41,9 @@ public partial class AddGamePageViewModel : ViewModelBase
     [ObservableProperty] private string cadence = "classic";
     [ObservableProperty] private string moves = "";
 
-    public AddGamePageViewModel()
+    public AddGamePageViewModel(MainViewModel mainViewModel)
     {
+        _mainViewModel = mainViewModel;
         _gameService = new GameService();
         _playerService = new PlayerService();
         _competitionService = new CompetitionService();
@@ -118,6 +120,18 @@ public partial class AddGamePageViewModel : ViewModelBase
         Result = "1-0";
         Cadence = "Classique";
         Moves = "";
+    }
+    
+    [RelayCommand]
+    private void GoToHomePage()
+    {
+        _mainViewModel.CurrentPage = new HomePageViewModel(_mainViewModel);
+    }
+    
+    [RelayCommand]
+    private void GoToGamePage()
+    {
+        _mainViewModel.CurrentPage = new GamePageViewModel(_mainViewModel);
     }
 
 }

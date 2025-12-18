@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using chess_DB.Models;
 using chess_DB.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
 namespace chess_DB.ViewModels;
 
@@ -14,6 +15,7 @@ public partial class ConsultGamePageViewModel : ViewModelBase
     private readonly GameService _gameService;
     private readonly PlayerService _playerService;
     private readonly CompetitionService _competitionService;
+    private readonly MainViewModel _mainViewModel;
 
     public ObservableCollection<Competition> Competitions { get; } = new();
     public ObservableCollection<Game> Games { get; } = new();
@@ -23,8 +25,9 @@ public partial class ConsultGamePageViewModel : ViewModelBase
     [ObservableProperty] private Competition? selectedCompetition;
     [ObservableProperty] private Game? selectedGame;
 
-    public ConsultGamePageViewModel()
+    public ConsultGamePageViewModel(MainViewModel mainViewModel)
     {
+        _mainViewModel = mainViewModel;
         _gameService = new GameService();
         _playerService = new PlayerService();
         _competitionService = new CompetitionService();
@@ -81,4 +84,16 @@ public partial class ConsultGamePageViewModel : ViewModelBase
     public string CompetitionName => SelectedGame == null 
         ? "" 
         : AllCompetitions.FirstOrDefault(c => c.Id == SelectedGame.CompetitionId)?.Name ?? "Inconnu";
+    
+    [RelayCommand]
+    private void GoToHomePage()
+    {
+        _mainViewModel.CurrentPage = new HomePageViewModel(_mainViewModel);
+    }
+    
+    [RelayCommand]
+    private void GoToGamePage()
+    {
+        _mainViewModel.CurrentPage = new GamePageViewModel(_mainViewModel);
+    }
 }

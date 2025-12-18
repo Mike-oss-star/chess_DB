@@ -15,13 +15,13 @@ public partial class GamePageViewModel:ViewModelBase
     [RelayCommand]
     private void GoToAddGamePage()
     {
-        _mainViewModel.CurrentPage = new AddGamePageViewModel();
+        _mainViewModel.CurrentPage = new AddGamePageViewModel(_mainViewModel);
     }
     
     [RelayCommand]
     private void GoToConsultGamePage()
     {
-        _mainViewModel.CurrentPage = new ConsultGamePageViewModel();
+        _mainViewModel.CurrentPage = new ConsultGamePageViewModel(_mainViewModel);
     }
     
     [RelayCommand]
@@ -32,12 +32,12 @@ public partial class GamePageViewModel:ViewModelBase
     [RelayCommand]
     private void GoToEditGamePage()
     {
-        _mainViewModel.CurrentPage = new EditGamePageViewModel();
+        _mainViewModel.CurrentPage = new EditGamePageViewModel(_mainViewModel);
     }
     
     [RelayCommand]
     private void GoToRemoveGamePage()
     {
-        _mainViewModel.CurrentPage = new RemoveGamePageViewModel();
+        _mainViewModel.CurrentPage = new RemoveGamePageViewModel(_mainViewModel);
     }
 }

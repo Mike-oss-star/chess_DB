@@ -34,18 +34,18 @@ public partial class HomePageViewModel : ViewModelBase
     [RelayCommand]
     private void GoToEloPage()
     {
-        _mainViewModel.CurrentPage = new EloRankingPageViewModel();
+        _mainViewModel.CurrentPage = new EloRankingPageViewModel(_mainViewModel);
     }
 
     [RelayCommand]
     private void GoToHistoryPage()
     {
-        _mainViewModel.CurrentPage = new PlayerEloHistoryPageViewModel();
+        _mainViewModel.CurrentPage = new PlayerEloHistoryPageViewModel(_mainViewModel);
     }
     
     [RelayCommand]
     private void GoToSubscriptionPage()
     {
-        _mainViewModel.CurrentPage = new SubscriptionPageViewModel();
+        _mainViewModel.CurrentPage = new SubscriptionPageViewModel(_mainViewModel);
     }
 }

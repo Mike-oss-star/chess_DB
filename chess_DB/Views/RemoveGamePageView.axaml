@@ -47,7 +47,8 @@
         <TextBlock Text="Parties:" FontSize="16" Margin="0,10,0,0"/>
         <ListBox ItemsSource="{Binding Games}"
                  SelectedItem="{Binding SelectedGame}"
-                 Height="500">
+                 Height="500"
+                 Classes="listPlayer">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" Spacing="12">

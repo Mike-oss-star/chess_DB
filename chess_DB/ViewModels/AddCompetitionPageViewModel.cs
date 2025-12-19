@@ -132,6 +132,11 @@ public partial class AddCompetitionPageViewModel : ViewModelBase
         }
     }
 
+    [RelayCommand]
+    private void Cancel()
+    {
+        _mainViewModel.CurrentPage = new AddCompetitionPageViewModel(_mainViewModel,new CompetitionService(),new PlayerService());
+    }
 
     
     

@@ -94,5 +94,11 @@ public partial class AddPlayerPageViewModel : ViewModelBase
     {
         _mainViewModel.CurrentPage = new PlayerPageViewModel(_mainViewModel);
     }
+
+    [RelayCommand]
+    private void Cancel()
+    {
+        _mainViewModel.CurrentPage = new AddPlayerPageViewModel(_mainViewModel);
+    }
     
 }

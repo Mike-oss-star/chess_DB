@@ -100,7 +100,7 @@
                             </StackPanel>
                         </Button>
                         
-                        <Button Classes="cancel">
+                        <Button Classes="cancel" Command="{Binding CancelCommand}">
                             <StackPanel Orientation="Horizontal">
                                 <Label Classes="icon_only" Content="&#xE4F6;"></Label>
                                 <Label Content="Cancel"></Label>
